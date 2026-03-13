@@ -131,7 +131,7 @@ export const projects: Project[] = [
     },
     {
         id: 15,
-        category: 'Для війських',
+        category:'Для військових',
         title: '015',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/15.jpg',
