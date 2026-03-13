@@ -54,7 +54,7 @@ export const projects: Project[] = [
     {
         id: 5,
         category: 'Подвійні',
-        title: '005"',
+        title: '005',
         description: 'Подвійна стела у формі розгорнутої книги з центральним хрестом.',
         img: '/img/5.jpg',
         material: 'Сірий граніт'
@@ -78,7 +78,7 @@ export const projects: Project[] = [
     {
         id: 8,
         category: 'Одинарні',
-        title: '008"',
+        title: '008',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/8.jpg',
         material: 'Габро'
@@ -86,7 +86,7 @@ export const projects: Project[] = [
     {
         id: 9,
         category: 'Одинарні',
-        title: '009"',
+        title: '009',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/9.jpg',
         material: 'Габро'

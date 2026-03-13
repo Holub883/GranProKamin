@@ -2,21 +2,21 @@
 
 import React from "react";
 import Image from 'next/image';
-import { Award, CheckCircle2, Heart, ShieldCheck, Target } from 'lucide-react';
+import { Award, CheckCircle2, Heart, ShieldCheck, Target, Sparkles } from 'lucide-react';
 import Header from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
 import '../style/About.css';
 
 const AboutSection = () => {
     const points = [
-        "Виготовлення та встановлення пам'ятників з граніту",
-        "Комбіновані пам'ятники з крихти та граніту",
-        "Індивідуальний 3D дизайн пам’ятників",
-        "Реставрація пам’ятників з крихти",
-        "Облицювання гранітом (заміна елементів)",
-        "Облаштування тротуарної плитки довкола",
-        "Вирівнювання пам’ятників, які «просіли»",
-        "Художні роботи різного типу"
+        "Унікальні пам'ятники за індивідуальними побажаннями",
+        "Використання найкращих сортів натурального граніту",
+        "Високоякісні меморіальні роботи будь-якої складності",
+        "Художнє оформлення з увагою до кожної деталі",
+        "Суворе дотримання термінів виконання",
+        "Безкоштовна консультація та обговорення потреб",
+        "Облаштування та благоустрій території",
+        "Професійний монтаж з гарантією довговічності"
     ];
 
     return (
@@ -28,12 +28,12 @@ const AboutSection = () => {
                 <div className="a-container a-grid-hero">
 
                     <div className="a-hero-content">
-                        <div className="a-badge-gold">GranyStyle</div>
-                        <h2 className="a-hero-title">Ми готові вам <br /> <span>допомогти</span></h2>
+                        <div className="a-badge-gold">ГранПроКамінь</div>
+                        <h2 className="a-hero-title">Вшануймо пам'ять <br /> <span>разом</span></h2>
 
                         <p className="a-hero-text">
-                            Потрібно виготовити пам’ятник чи облаштувати територію навколо нього?
-                            Ми здійснюємо повний спектр робіт у Львові та області:
+                            Ми спеціалізуємось на створенні пам'ятників, які відображають вашу любов і повагу до близьких.
+                            Наші майстри з багаторічним досвідом виготовляють високоякісні вироби, вкладаючи душу в кожен сантиметр каменю.
                         </p>
 
                         <ul className="a-points-list">
@@ -49,13 +49,13 @@ const AboutSection = () => {
 
                         <div className="a-hero-footer">
                             <div className="a-line-gold" />
-                            <p className="a-italic-zinc">...та багато іншого.</p>
+                            <p className="a-italic-zinc">Зв'яжіться з нами сьогодні для безкоштовної консультації.</p>
                         </div>
                     </div>
 
                     <div className="a-hero-image-box">
                         <div className="a-image-container">
-                            <Image src="/img/logo.jpg" alt="Майстерня" fill className="a-img" />
+                            <Image src="/img/logo.jpg" alt="Майстерня ГранПроКамінь" fill className="a-img" />
                         </div>
                     </div>
 
@@ -66,16 +66,16 @@ const AboutSection = () => {
             <section className="a-philosophy">
                 <div className="a-container">
                     <div className="a-center-header">
-                        <span className="a-badge-gold">Наші принципи</span>
-                        <h2 className="a-section-title">Філософія якості</h2>
+                        <span className="a-badge-gold">Наші цінності</span>
+                        <h2 className="a-section-title">Чому обирають нас</h2>
                     </div>
 
                     <div className="a-grid-cards">
                         {[
-                            { icon: <ShieldCheck size={36} />, title: "Відповідальність", desc: "Лише перевірений граніт та якісна крихта." },
-                            { icon: <Target size={36} />, title: "Точність", desc: "3D дизайн дозволяє уникнути помилок у пропорціях." },
-                            { icon: <Heart size={36} />, title: "Повага", desc: "Працюємо професійно та з глибокою повагою." },
-                            { icon: <Award size={36} />, title: "Якість монтажу", desc: "Міцний фундамент запобігає просіданню." }
+                            { icon: <Heart size={36} />, title: "Любов та Повага", desc: "Створюємо меморіали, що передають найтепліші почуття до близьких." },
+                            { icon: <Sparkles size={36} />, title: "Унікальність", desc: "Виготовляємо пам'ятники за вашими ескізами та побажаннями." },
+                            { icon: <ShieldCheck size={36} />, title: "Якість матеріалів", desc: "Використовуємо лише відбірний камінь для вічної краси." },
+                            { icon: <Award size={36} />, title: "Досвід майстрів", desc: "Багаторічний стаж роботи з увагою до найменших деталей." }
                         ].map((item, i) => (
                             <div key={i} className="a-philosophy-card">
                                 <div className="a-card-icon">{item.icon}</div>
@@ -92,10 +92,10 @@ const AboutSection = () => {
             <section className="a-stats">
                 <div className="a-container a-grid-stats">
                     {[
-                        { label: "Населених пунктів", val: "50+" },
-                        { label: "Років досвіду", val: "10+" },
-                        { label: "Види граніту", val: "12" },
-                        { label: "Гарантія на монтаж", val: "10 р." }
+                        { label: "Задоволених клієнтів", val: "1000+" },
+                        { label: "Років у професії", val: "10+" },
+                        { label: "Гарантія якості", val: "100%" },
+                        { label: "Термін служби", val: "Вічність" }
                     ].map((stat, i) => (
                         <div key={i} className="a-stat-item">
                             <p className="a-stat-val">{stat.val}</p>

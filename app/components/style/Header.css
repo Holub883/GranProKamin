@@ -730,4 +730,73 @@ a.detail-item:hover {
 
     }
 
+}/* Кнопка бургера */
+.mobile-menu-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    z-index: 1001;
+}
+
+/* Ховаємо Navbar на мобільних і показуємо на ПК */
+.desktop-nav {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .desktop-nav {
+        display: block;
+        width: 100%;
+    }
+    .mobile-menu-btn {
+        display: none;
+    }
+}
+
+/* Стилі для випадаючого меню */
+.mobile-drop-menu {
+    position: fixed;
+    top: 50px; /* Висота топ-бару */
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: #000;
+    z-index: 999;
+    overflow: hidden;
+    transition: height 0.4s ease;
+    border-bottom: 1px solid #b8860b;
+}
+
+.mobile-drop-menu.show {
+    height: auto;
+    padding-bottom: 40px;
+}
+
+.mobile-menu-inner {
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.mobile-menu-footer {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 20px;
+}
+
+.m-phone {
+    color: #b8860b;
+    font-size: 20px;
+    font-weight: 700;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.m-mail {
+    color: rgba(255,255,255,0.5);
+    font-size: 13px;
 }

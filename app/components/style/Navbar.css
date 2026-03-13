@@ -1,72 +1,84 @@
+/* БАЗОВИЙ СТАН (Мобільний) */
 .main-nav {
-    display: none;
-    height: 100%;
-}
-
-@media (min-width: 1024px) {
-    .main-nav {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* Чіткий розподіл між пунктами через вертикальні розділювачі */
-        gap: 0;
-    }
+    display: flex;
+    flex-direction: column; /* Вертикально для моб. меню */
+    width: 100%;
+    gap: 10px;
 }
 
 .nav-item {
     position: relative;
-    padding: 12px 35px; /* Більше відступів для солідності */
-    font-size: 13px;
+    padding: 15px 20px;
+    font-size: 14px;
     text-transform: uppercase;
-    /* Чіткий, впевнений інтервал */
-    letter-spacing: 0.35em;
+    letter-spacing: 0.2em;
     color: #ffffff;
-    opacity: 1; /* Спокійний стан */
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    border-right: 1px solid rgba(255, 255, 255, 0.08); /* Тонка вертикальна риска */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05); /* Розділювач для списку */
 }
 
-/* Прибираємо риску у останнього пункту */
-.nav-item:last-child {
-    border-right: none;
+/* ДЕСКТОПНИЙ СТАН (min-width: 1024px) */
+@media (min-width: 1024px) {
+    .main-nav {
+        flex-direction: row; /* Горизонтально */
+        height: 100%;
+        gap: 0;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .nav-item {
+        padding: 12px 25px;
+        font-size: 12px;
+        letter-spacing: 0.35em;
+        border-bottom: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.08);
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-item:last-child {
+        border-right: none;
+    }
+
+    /* Анімація верхньої лінії лише для десктопа */
+    .nav-item::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #b8860b;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    }
+
+    .nav-item:hover::after,
+    .nav-item.active::after {
+        transform: scaleX(1);
+    }
 }
 
-/* Чіткий ефект при наведенні */
-.nav-item:hover {
-    opacity: 1;
-    color: #b8860b;
-    background: rgba(255, 255, 255, 0.02); /* Ледь помітна підкладка */
-}
-
-/* Замість підкреслення — чіткий верхній маркер */
-.nav-item::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: #b8860b;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.nav-item:hover::after {
-    transform: scaleX(1);
-}
-
-/* Активний стан: чітко виділений */
+/* Ефекти наведення та активності */
+.nav-item:hover,
 .nav-item.active {
-    opacity: 1;
     color: #b8860b;
+    background: rgba(184, 134, 11, 0.05);
 }
 
-.nav-item.active::after {
-    transform: scaleX(1);
-    height: 1px; /* Тонша лінія для активного, але постійна */
+@media (max-width: 1023px) {
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    /* Для мобілки підсвітимо активний пункт зліва золотою лінією */
+    .nav-item.active {
+        border-left: 3px solid #b8860b;
+        padding-left: 17px; /* Компенсація товщини лінії */
+    }
 }
