@@ -1,0 +1,221 @@
+/* --- HERO SECTION --- */
+.hero-section {
+    position: relative;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Колір світлого каменю з ледь помітним теплим підтоном */
+    background-color: #fcfcfc;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .hero-grid {
+        grid-template-columns: 1.2fr 0.8fr; /* Співвідношення тексту та списку */
+        gap: 100px;
+    }
+}
+
+/* --- ТЕКСТОВИЙ БЛОК --- */
+.hero-badge-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.hero-badge-line {
+    height: 1px;
+    width: 30px;
+    background-color: #b8860b;
+}
+
+.hero-badge-text {
+    color: rgb(5, 5, 15);
+}
+
+.hero-title {
+    font-family: serif;
+    font-size: clamp(40px, 6vw, 85px); /* Дуже великий і впевнений */
+    color: rgb(5, 5, 15);
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.hero-title span {
+    color: #b8860b;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.hero-description {
+    max-width: 480px;
+    color: rgb(5, 5, 15);
+    font-size: 16px;
+    line-height: 1.8;
+    margin-top: 35px;
+}
+
+/* --- КНОПКА --- */
+.btn-primary-light {
+    display: inline-block;
+    padding: 20px 45px;
+    background-color: rgb(5, 5, 15); /* Чорна кнопка на світлому фоні — це люкс */
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.btn-primary-light:hover {
+    background-color: #b8860b;
+    transform: translateY(-3px);
+}
+
+/* --- КАТЕГОРІЇ (СПИСОК) --- */
+.hero-categories {
+    display: flex;
+    flex-direction: column;
+}
+
+.cat-card {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* Тонка лінія */
+    transition: all 0.4s ease;
+}
+
+.cat-title {
+    color: rgb(5, 5, 15);
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-weight: 600;
+    transition: all 0.4s ease;
+}
+
+.cat-line {
+    flex-grow: 1;
+    height: 1px;
+    background: #b8860b;
+    margin: 0 20px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.cat-arrow {
+    color: #b8860b;
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: all 0.4s ease;
+}
+
+/* Hover Ефекти */
+.cat-card:hover .cat-title {
+    color: #b8860b;
+    transform: translateX(5px);
+}
+
+.cat-card:hover .cat-line {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.cat-card:hover .cat-arrow {
+    opacity: 1;
+    transform: translateX(0);
+}
+/* --- БІЛА СЕКЦІЯ (CONTENT) --- */
+.content-section {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #000000;
+    padding: 80px 20px;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .content-section {
+        padding: 160px 40px;
+    }
+}
+
+.content-title {
+    font-family: serif;
+    /* Автоматично зменшує шрифт на мобільних */
+    font-size: clamp(40px, 10vw, 80px);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
+    margin-bottom: 40px;
+}
+
+.content-title span {
+    color: #d1d1d1; /* Світло-сірий італік */
+    font-style: italic;
+}
+
+.service-item {
+    border-bottom: 1px solid #f0f0f0;
+    padding-bottom: 30px;
+    transition: all 0.4s ease;
+}
+
+.service-item:hover {
+    border-color: #b8860b;
+}
+
+.service-label {
+    color: #b8860b;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* --- EXPERTISE (ЧОМУ МИ) --- */
+.expertise-section {
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, #302f2f, #4f545e);
+}
+
+.expertise-card {
+    padding: 40px 20px;
+    background: rgba(24, 24, 27, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.4s ease;
+}
+
+.expertise-card:hover {
+    background: rgba(24, 24, 27, 0.4);
+    border-color: rgba(184, 134, 11, 0.3);
+    transform: translateY(-5px);
+}
+
+.expertise-number {
+    font-family: serif;
+    font-style: italic;
+    font-size: 48px;
+    color: rgba(184, 134, 11, 0.2);
+    margin-bottom: 20px;
+    line-height: 1;
+}

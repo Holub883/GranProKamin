@@ -1,0 +1,230 @@
+.guarantees-page {
+    background-color: #0a0a0a;
+    color: white;
+    min-height: 100vh;
+}
+
+.g-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- HERO --- */
+.guarantees-hero {
+    padding: 160px 0 80px;
+    background: linear-gradient(to bottom, #000, #0a0a0a);
+    text-align: center;
+}
+
+.g-subtitle {
+    color: #b8860b;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.6em;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.g-main-title {
+    font-family: serif;
+    font-size: clamp(40px, 8vw, 80px);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 30px;
+}
+
+.g-hero-desc {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #a1a1aa;
+    font-weight: 300;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+/* --- DETAILS SECTION --- */
+.g-details-section {
+    padding: 100px 0;
+}
+
+.g-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+@media (min-width: 1024px) {
+    .g-flex {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.g-info-column { flex: 1; }
+.g-image-column { flex: 1; }
+
+.g-section-title {
+    font-family: serif;
+    font-size: clamp(32px, 5vw, 48px);
+    margin-bottom: 30px;
+    line-height: 1.1;
+}
+
+.g-section-title span {
+    color: #b8860b;
+    font-style: italic;
+}
+
+.g-text {
+    color: #71717a;
+    line-height: 1.7;
+    margin-bottom: 40px;
+}
+
+/* Картки всередині */
+.g-cards-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.g-mini-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    transition: transform 0.3s;
+}
+
+.g-mini-card:hover { transform: translateX(10px); }
+
+.g-icon-gold { color: #b8860b; shrink: 0; }
+
+.g-mini-card h5 {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    margin-bottom: 5px;
+}
+
+.g-mini-card p {
+    font-size: 13px;
+    color: #71717a;
+}
+
+/* Картинка */
+.g-image-wrapper {
+    position: relative;
+    height: 500px;
+    background: url('https://images.unsplash.com/photo-1544006659-f0b21f04cb1d?q=80&w=2070') center/cover;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.g-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+}
+
+.g-badge {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    background: #b8860b;
+    padding: 30px;
+    color: white;
+    display: none;
+}
+
+@media (min-width: 1024px) { .g-badge { display: block; } }
+
+/* --- FEATURES --- */
+.g-features-section {
+    padding: 100px 0;
+    background: #0f0f0f;
+}
+
+.g-grid-3 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+@media (min-width: 768px) {
+    .g-grid-3 { grid-template-columns: repeat(3, 1fr); }
+}
+
+.g-feature-item {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.g-feature-icon {
+    color: #b8860b;
+    margin-bottom: 25px;
+    transition: transform 0.4s ease;
+}
+
+.g-feature-item:hover .g-feature-icon { transform: scale(1.2); }
+
+.g-feature-item h4 {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.g-feature-item p {
+    font-size: 14px;
+    color: #71717a;
+    line-height: 1.6;
+}
+
+/* --- CTA SECTION --- */
+.g-cta-section {
+    padding: 100px 20px;
+}
+
+.g-cta-box {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #000;
+    border: 1px solid rgba(184, 134, 11, 0.3);
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.g-cta-box h3 {
+    font-family: serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.g-cta-box p {
+    color: #71717a;
+    margin-bottom: 40px;
+}
+
+.g-cta-btn {
+    background: #b8860b;
+    color: white;
+    border: none;
+    padding: 18px 45px;
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.3em;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.3s;
+}
+
+.g-cta-btn:hover {
+    background: white;
+    color: black;
+}

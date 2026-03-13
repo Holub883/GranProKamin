@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
+/* Оголошуємо змінні для Tailwind, щоб він не видавав помилку "Cannot resolve" */
+@theme {
+    --font-main:  sans-serif;
+    --font-heading:  serif;
+    --color-gold: #b8860b;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --gold: #b8860b;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* 1. Основний текст (Roboto Condensed) */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    /* Додаємо фолбек, щоб CSS був валідним */
+    font-family: var(--font-roboto-condensed, ui-sans-serif, system-ui), sans-serif;
+    background-color: #fcfcfc;
+    color: #1a1a1a;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* 2. Заголовки (Playfair Display) */
+h1, h2, h3, h4, .hero-title, .contact-title {
+    font-family: var(--font-playfair, ui-serif, Georgia), serif;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* 3. Чіткі елементи інтерфейсу */
+.nav-item,
+.lang-btn,
+.header-phone,
+.header-details,
+.hero-badge-text,
+.submit-btn {
+    font-family: ui-sans-serif, sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+}
+
+/* Інші стилі для чистоти */
+html {
+    scroll-behavior: smooth;
+}
+
+a, button {
+    transition: all 0.3s ease;
 }

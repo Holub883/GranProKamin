@@ -1,0 +1,110 @@
+/* Базовий контейнер */
+.footer {
+    background: rgb(9, 8, 23);
+    color: white;
+    padding: 40px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Контент: на десктопі карта праворуч, контакти ліворуч */
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+@media (min-width: 1024px) {
+    .footer-content {
+        flex-direction: row;
+        justify-content: flex-start; /* Всі елементи притиснуті до лівого краю */
+        gap: 400px; /* Чітка відстань між текстом і картою */
+    }
+}
+
+/* Блок контактів — тепер все строго в стовпчик */
+.footer-contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.contact-label {
+    color: #b8860b;
+    font-size: 9px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 4px;
+}
+
+.footer-phone {
+    font-size: 26px;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 15px; /* Відступ від номера до інших контактів */
+}
+
+/* Список (мейл, годинник) */
+.contact-details-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Мінімальна відстань між рядками */
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+}
+
+/* Соцмережі — згруповані під списком */
+.social-links-wrapper {
+    display: flex;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.social-link {
+    color: rgba(255, 255, 255, 0.5);
+    transition: 0.3s;
+}
+
+.social-link:hover {
+    color: #b8860b;
+}
+
+/* Карта — тепер вона не займає весь простір */
+.footer-map-box {
+    width: 100%;
+    max-width: 400px; /* Обмежуємо ширину, щоб не була на пів екрана */
+    height: 160px;
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.map-iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Нижня панель */
+.footer-bottom {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    color: #52525b;
+}
