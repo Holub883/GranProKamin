@@ -19,7 +19,7 @@ const SingleMonumentsPage = () => {
             {/* 1. HERO СЕКЦІЯ КАТЕГОРІЇ */}
             <section className="pt-32 pb-20 px-6 border-b border-white/5">
                 <div className="max-w-7xl mx-auto">
-                    <Link href="/works" className="flex items-center gap-2 text-[#b8860b] text-[10px] uppercase tracking-[0.3em] mb-12 hover:translate-x-[-5px] transition-transform">
+                    <Link href="/" className="flex items-center gap-2 text-[#b8860b] text-[10px] uppercase tracking-[0.3em] mb-12 hover:translate-x-[-5px] transition-transform">
                         <ArrowLeft size={14} /> Назад до всіх робіт
                     </Link>
 

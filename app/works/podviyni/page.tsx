@@ -18,7 +18,7 @@ const DoubleMonumentsPage = () => {
 
             <section className="pt-32 pb-20 px-6 border-b border-white/5">
                 <div className="max-w-7xl mx-auto">
-                    <Link href="/works" className="flex items-center gap-2 text-[#d32f2f] text-[10px] uppercase tracking-[0.3em] mb-12 hover:translate-x-[-5px] transition-transform font-bold">
+                    <Link href="/" className="flex items-center gap-2 text-[#d32f2f] text-[10px] uppercase tracking-[0.3em] mb-12 hover:translate-x-[-5px] transition-transform font-bold">
                         <ArrowLeft size={14} /> Назад до робіт
                     </Link>
 
