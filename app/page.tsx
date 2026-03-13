@@ -58,15 +58,18 @@ export default function Home() {
                 <div className="max-w-6xl mx-auto">
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-start">
 
+                        {/* Ліва частина: Заголовок */}
                         <div className="lg:sticky lg:top-32">
-                            <span className="text-[#b8860b] text-[10px] uppercase tracking-[0.4em] font-bold mb-6 block">Про майстерню</span>
+                            <span className="service-label">Про майстерню</span>
                             <h2 className="content-title">
                                 Вшановуємо <br />
                                 <span>пам'ять разом.</span>
                             </h2>
-                            <div className="w-16 h-1 bg-black hidden md:block" />
+                            {/* Декоративна лінія в стилі вашого бренду */}
+                            <div className="hero-badge-line hidden md:block" style={{ width: '60px', height: '2px', backgroundColor: '#000' }} />
                         </div>
 
+                        {/* Права частина: Текст та Послуги */}
                         <div className="space-y-12 md:space-y-20">
                             <p className="text-xl md:text-3xl font-serif italic leading-snug text-zinc-800">
                                 «Ми створюємо унікальні пам'ятники за вашими побажаннями, використовуючи лише найкращі матеріали для довговічності та краси.»
@@ -96,6 +99,7 @@ export default function Home() {
                                 ))}
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>

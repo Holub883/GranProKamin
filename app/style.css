@@ -4,8 +4,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fcfcfc;
-    /* ПРАВКА: Відступ зверху для мобілки, щоб хедер не закривав текст */
+    background-color: #fcfcfc; /* Світлий фон */
     padding-top: 140px;
     padding-bottom: 60px;
 }
@@ -13,14 +12,14 @@
 @media (min-width: 1024px) {
     .hero-section {
         min-height: 70vh;
-        padding-top: 100px; /* Менший відступ для десктопа */
+        padding-top: 100px;
     }
 }
 
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 40px; /* Менший розрив на моб */
+    gap: 40px;
     align-items: center;
     width: 100%;
     max-width: 1400px;
@@ -49,7 +48,7 @@
 }
 
 .hero-badge-text {
-    color: rgb(5, 5, 15);
+    color: #05050f; /* Чорний текст */
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
@@ -57,23 +56,22 @@
 
 .hero-title {
     font-family: serif;
-    /* ПРАВКА: Гнучкий шрифт для моб (мінімум 32px) */
     font-size: clamp(32px, 9vw, 85px);
-    color: rgb(5, 5, 15);
+    color: #05050f; /* Чорний текст */
     line-height: 1.1;
     text-transform: uppercase;
     letter-spacing: -0.02em;
 }
 
 .hero-title span {
-    color: #b8860b;
+    color: #b8860b; /* Золотий акцент */
     font-style: italic;
     font-weight: 300;
 }
 
 .hero-description {
     max-width: 480px;
-    color: rgb(5, 5, 15);
+    color: #27272a; /* Темно-сірий текст */
     font-size: 15px;
     line-height: 1.6;
     margin-top: 25px;
@@ -84,8 +82,8 @@
 .btn-primary-light {
     display: inline-block;
     padding: 18px 35px;
-    background-color: rgb(5, 5, 15);
-    color: #ffffff;
+    background-color: #05050f; /* Чорна кнопка */
+    color: #ffffff !important; /* Білий текст на кнопці */
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: 0.3em;
@@ -95,75 +93,82 @@
     text-align: center;
 }
 
-@media (max-width: 768px) {
-    .btn-primary-light {
-        width: 100%; /* На моб кнопка на всю ширину */
-    }
+.btn-primary-light:hover {
+    background-color: #b8860b;
+    color: #ffffff !important;
 }
 
-/* --- КАТЕГОРІЇ (СПИСОК) --- */
-.hero-categories {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-}
-
+/* --- КАТЕГОРІЇ --- */
 .cat-card {
     display: flex;
     align-items: center;
     padding: 25px 0;
     text-decoration: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Темніша лінія розділювача */
     transition: all 0.4s ease;
 }
 
 .cat-title {
-    color: rgb(5, 5, 15);
+    color: #05050f; /* Чорний текст */
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 0.2em;
     font-weight: 600;
-    transition: all 0.4s ease;
 }
 
-.cat-line {
-    flex-grow: 1;
-    height: 1px;
-    background: #b8860b;
-    margin: 0 15px;
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+.cat-card:hover .cat-title {
+    color: #b8860b;
 }
 
-/* Ховаємо лінію на моб для чистоти */
-@media (max-width: 1023px) {
-    .cat-line { display: none; }
+/* --- CONTENT SECTION (БІЛА) --- */
+.content-section {
+    background-color: #ffffff;
+    padding: 100px 24px;
 }
 
-/* --- EXPERTISE --- */
+.content-title {
+    color: #05050f;
+    font-family: serif;
+    font-size: clamp(40px, 8vw, 80px);
+    line-height: 1;
+}
+
+.content-title span {
+    color: #a1a1aa; /* Світло-сірий для італіка */
+}
+
+.service-label {
+    color: #b8860b;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.service-item p {
+    color: #3f3f46; /* Темний текст */
+}
+
+/* --- EXPERTISE (ТЕМНА) --- */
 .expertise-section {
-    padding: 60px 20px;
-    background: linear-gradient(to bottom, #302f2f, #4f545e);
-}
-
-.expertise-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-@media (min-width: 768px) {
-    .expertise-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    padding: 80px 20px;
+    background: linear-gradient(to bottom, #18181b, #09090b);
+    color: #ffffff;
 }
 
 .expertise-card {
     padding: 40px 24px;
     background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.expertise-card h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.expertise-card p {
+    color: rgba(255, 255, 255, 0.7);
 }
