@@ -10,7 +10,7 @@ const socialLinks = [
     },
     {
         Icon: Instagram,
-        href: "https://www.instagram.com/1kamin_bc",
+        href: "https://www.instagram.com/_granit_koros?igsh=MXJpdTd5eWZseGtjcQ==",
         label: "Instagram"
     },
     {
