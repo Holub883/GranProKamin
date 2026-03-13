@@ -14,7 +14,7 @@ const workCategories = [
     { title: 'Подвійні', slug: 'podviyni', img: '/img/image (6).webp', num: 'II' },
     { title: 'Комплекси', slug: 'kompleksy', img: '/img/image (3).webp', num: 'III' },
     { title: 'Ексклюзив', slug: 'exclusive', img: '/img/image (1).webp', num: 'IV' },
-    { title: 'Для військових', slug: 'exclusive', img: '/img/image (1).webp', num: 'V' }
+    { title: 'Для військових', slug: 'arms', img: '/img/image (1).webp', num: 'V' }
 ];
 
 export default function Home() {

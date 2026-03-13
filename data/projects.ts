@@ -13,9 +13,7 @@ export const categories = [
     'Подвійні',
     'Комплекси',
     'Ексклюзив',
-    'Для війських',
-    'Художня робота',
-    'Благоустрій'
+    'Для військових',
 ];
 
 export const projects: Project[] = [
@@ -45,7 +43,7 @@ export const projects: Project[] = [
     },
     {
         id: 4,
-        category: 'Художня робота',
+        category: 'Подвійні',
         title: '004',
         description: 'Високохудожнє гравіювання ікони на чорному граніті.',
         img: '/img/4.jpg',
@@ -157,7 +155,7 @@ export const projects: Project[] = [
     },
     {
         id: 18,
-        category: 'Для війських',
+        category: 'Для військових',
         title: '018',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/18.jpg',
@@ -248,7 +246,7 @@ export const projects: Project[] = [
         material: 'Габро'
     },    {
         id: 30,
-        category: 'Еклюзив',
+        category: 'Ексклюзив',
         title: '030',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/30.jpg',
@@ -256,7 +254,7 @@ export const projects: Project[] = [
     },
     {
         id: 31,
-        category: 'Для війських',
+        category: 'Для військових',
         title: '031',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/31.jpg',
@@ -264,7 +262,7 @@ export const projects: Project[] = [
     },
     {
         id: 32,
-        category: 'Еклюзив',
+        category: 'Ексклюзив',
         title: '032',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/32.jpg',
@@ -280,7 +278,7 @@ export const projects: Project[] = [
     },
     {
         id: 34,
-        category: 'Для війських',
+        category: 'Для військових',
         title: '034',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/34.jpg',

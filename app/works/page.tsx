@@ -55,9 +55,6 @@ const WorksPage = () => {
                                 <span className="work-cat">{project.category}</span>
                                 <h3 className="work-card-title">{project.title}</h3>
 
-                                {project.material && (
-                                    <p className="work-material">{project.material}</p>
-                                )}
 
                                 <div className="mt-6 text-[#d32f2f] opacity-50 group-hover:opacity-100 transition-opacity">
                                     <Plus size={24} strokeWidth={1} />

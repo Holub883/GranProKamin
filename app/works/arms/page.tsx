@@ -6,10 +6,10 @@ import Link from 'next/link';
 import Header from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
 import { projects } from '@/data/projects';
-import { ArrowLeft, Maximize2, Move3D, HardHat, LandPlot } from 'lucide-react';
+import { ArrowLeft, Maximize2, Sparkles, Gem, PenTool } from 'lucide-react';
 
-const ComplexesPage = () => {
-    const filteredItems = projects.filter(p => p.category === 'Комплекси');
+const ArmsPage = () => {
+    const filteredItems = projects.filter(p => p.category === 'Для військових');
 
     return (
         <main className="min-h-screen bg-[#050505] text-[#e5e5e5]">
@@ -25,11 +25,11 @@ const ComplexesPage = () => {
                         <div>
                             <span className="text-zinc-500 text-[10px] uppercase tracking-[0.5em] mb-4 block">Категорія</span>
                             <h1 className="text-5xl md:text-8xl font-serif italic text-white tracking-tighter">
-                                Меморіальні<br /> <span className="text-[#d32f2f]">комплекси</span>
+                                Для військових<br /> <span className="text-[#d32f2f]">вироби</span>
                             </h1>
                         </div>
                         <p className="text-zinc-500 text-lg font-light leading-relaxed max-w-md">
-                            Повне облаштування місця поховання: поєднання граніту, плитки, огорожі та художніх елементів у єдиний архітектурний ансамбль.
+                            Унікальні авторські проекти, створені за індивідуальними ескізами. Складне ручне різьблення та рідкісні породи каменю.
                         </p>
                     </div>
                 </div>
@@ -38,16 +38,16 @@ const ComplexesPage = () => {
             <section className="py-12 bg-[#0a0a0a] border-b border-white/5">
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
                     <div className="flex items-center gap-4">
-                        <Move3D className="text-[#d32f2f]" size={24} strokeWidth={1} />
-                        <span className="text-[10px] uppercase tracking-widest font-medium">3D Моделювання</span>
+                        <Sparkles className="text-[#d32f2f]" size={24} strokeWidth={1} />
+                        <span className="text-[10px] uppercase tracking-widest font-medium">Ручна робота</span>
                     </div>
                     <div className="flex items-center gap-4">
-                        <LandPlot className="text-[#d32f2f]" size={24} strokeWidth={1} />
-                        <span className="text-[10px] uppercase tracking-widest font-medium">Планування ділянки</span>
+                        <Gem className="text-[#d32f2f]" size={24} strokeWidth={1} />
+                        <span className="text-[10px] uppercase tracking-widest font-medium">Рідкісні граніти</span>
                     </div>
                     <div className="flex items-center gap-4">
-                        <HardHat className="text-[#d32f2f]" size={24} strokeWidth={1} />
-                        <span className="text-[10px] uppercase tracking-widest font-medium">Встановлення «під ключ»</span>
+                        <PenTool className="text-[#d32f2f]" size={24} strokeWidth={1} />
+                        <span className="text-[10px] uppercase tracking-widest font-medium">Авторський ескіз</span>
                     </div>
                 </div>
             </section>
@@ -67,7 +67,7 @@ const ComplexesPage = () => {
                                 <div className="space-y-2">
                                     <div className="pt-4 flex items-center justify-between border-t border-white/5">
                                         <h3 className="text-xl font-serif italic text-white">{item.title}</h3>
-                                        <Link href="/contacts" className="text-[9px] uppercase tracking-widest text-white hover:text-[#d32f2f] transition-colors font-bold">Прорахунок</Link>
+                                        <Link href="/contacts" className="text-[9px] uppercase tracking-widest text-white hover:text-[#d32f2f] transition-colors font-bold">Замовити</Link>
                                     </div>
                                 </div>
                             </div>
@@ -81,4 +81,4 @@ const ComplexesPage = () => {
     );
 };
 
-export default ComplexesPage;
+export default ArmsPage;

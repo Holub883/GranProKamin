@@ -66,10 +66,8 @@ const DoubleMonumentsPage = () => {
                                     </div>
                                 </div>
                                 <div className="space-y-2">
-                                    <h3 className="text-xl font-serif italic text-white">{item.title}</h3>
-                                    <p className="text-zinc-500 text-sm font-light leading-relaxed">{item.description}</p>
                                     <div className="pt-4 flex items-center justify-between border-t border-white/5">
-                                        <span className="text-[9px] uppercase tracking-widest text-[#d32f2f] font-bold">Матеріал: {item.material}</span>
+                                        <h3 className="text-xl font-serif italic text-white">{item.title}</h3>
                                         <Link href="/contacts" className="text-[9px] uppercase tracking-widest text-white hover:text-[#d32f2f] transition-colors">Замовити</Link>
                                     </div>
                                 </div>
