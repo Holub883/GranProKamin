@@ -1,24 +1,35 @@
 /* --- HERO SECTION --- */
 .hero-section {
-    position: relative;
-    min-height: 70vh;
+    min-height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    /* Колір світлого каменю з ледь помітним теплим підтоном */
     background-color: #fcfcfc;
+    /* ПРАВКА: Відступ зверху для мобілки, щоб хедер не закривав текст */
+    padding-top: 140px;
+    padding-bottom: 60px;
+}
+
+@media (min-width: 1024px) {
+    .hero-section {
+        min-height: 70vh;
+        padding-top: 100px; /* Менший відступ для десктопа */
+    }
 }
 
 .hero-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px; /* Менший розрив на моб */
     align-items: center;
+    width: 100%;
+    max-width: 1400px;
+    padding: 0 24px;
 }
 
 @media (min-width: 1024px) {
     .hero-grid {
-        grid-template-columns: 1.2fr 0.8fr; /* Співвідношення тексту та списку */
+        grid-template-columns: 1.2fr 0.8fr;
         gap: 100px;
     }
 }
@@ -28,7 +39,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .hero-badge-line {
@@ -39,13 +50,17 @@
 
 .hero-badge-text {
     color: rgb(5, 5, 15);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
 }
 
 .hero-title {
     font-family: serif;
-    font-size: clamp(40px, 6vw, 85px); /* Дуже великий і впевнений */
+    /* ПРАВКА: Гнучкий шрифт для моб (мінімум 32px) */
+    font-size: clamp(32px, 9vw, 85px);
     color: rgb(5, 5, 15);
-    line-height: 1;
+    line-height: 1.1;
     text-transform: uppercase;
     letter-spacing: -0.02em;
 }
@@ -59,50 +74,54 @@
 .hero-description {
     max-width: 480px;
     color: rgb(5, 5, 15);
-    font-size: 16px;
-    line-height: 1.8;
-    margin-top: 35px;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-top: 25px;
+    margin-bottom: 35px;
 }
 
 /* --- КНОПКА --- */
 .btn-primary-light {
     display: inline-block;
-    padding: 20px 45px;
-    background-color: rgb(5, 5, 15); /* Чорна кнопка на світлому фоні — це люкс */
+    padding: 18px 35px;
+    background-color: rgb(5, 5, 15);
     color: #ffffff;
     text-transform: uppercase;
-    font-size: 11px;
+    font-size: 10px;
     letter-spacing: 0.3em;
     font-weight: 700;
     text-decoration: none;
     transition: all 0.3s ease;
+    text-align: center;
 }
 
-.btn-primary-light:hover {
-    background-color: #b8860b;
-    transform: translateY(-3px);
+@media (max-width: 768px) {
+    .btn-primary-light {
+        width: 100%; /* На моб кнопка на всю ширину */
+    }
 }
 
 /* --- КАТЕГОРІЇ (СПИСОК) --- */
 .hero-categories {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
 }
 
 .cat-card {
     display: flex;
     align-items: center;
-    padding: 30px 0;
+    padding: 25px 0;
     text-decoration: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08); /* Тонка лінія */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     transition: all 0.4s ease;
 }
 
 .cat-title {
     color: rgb(5, 5, 15);
-    font-size: 13px;
+    font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.25em;
+    letter-spacing: 0.2em;
     font-weight: 600;
     transition: all 0.4s ease;
 }
@@ -111,111 +130,40 @@
     flex-grow: 1;
     height: 1px;
     background: #b8860b;
-    margin: 0 20px;
+    margin: 0 15px;
     transform: scaleX(0);
     transform-origin: right;
     transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-.cat-arrow {
-    color: #b8860b;
-    opacity: 0;
-    transform: translateX(-15px);
-    transition: all 0.4s ease;
+/* Ховаємо лінію на моб для чистоти */
+@media (max-width: 1023px) {
+    .cat-line { display: none; }
 }
 
-/* Hover Ефекти */
-.cat-card:hover .cat-title {
-    color: #b8860b;
-    transform: translateX(5px);
-}
-
-.cat-card:hover .cat-line {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-.cat-card:hover .cat-arrow {
-    opacity: 1;
-    transform: translateX(0);
-}
-/* --- БІЛА СЕКЦІЯ (CONTENT) --- */
-.content-section {
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.95);
-    color: #000000;
-    padding: 80px 20px;
-    overflow: hidden;
-}
-
-@media (min-width: 768px) {
-    .content-section {
-        padding: 160px 40px;
-    }
-}
-
-.content-title {
-    font-family: serif;
-    /* Автоматично зменшує шрифт на мобільних */
-    font-size: clamp(40px, 10vw, 80px);
-    line-height: 0.9;
-    letter-spacing: -0.04em;
-    margin-bottom: 40px;
-}
-
-.content-title span {
-    color: #d1d1d1; /* Світло-сірий італік */
-    font-style: italic;
-}
-
-.service-item {
-    border-bottom: 1px solid #f0f0f0;
-    padding-bottom: 30px;
-    transition: all 0.4s ease;
-}
-
-.service-item:hover {
-    border-color: #b8860b;
-}
-
-.service-label {
-    color: #b8860b;
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.3em;
-    font-weight: bold;
-    margin-bottom: 15px;
-    display: block;
-}
-
-/* --- EXPERTISE (ЧОМУ МИ) --- */
+/* --- EXPERTISE --- */
 .expertise-section {
-    padding: 80px 20px;
+    padding: 60px 20px;
     background: linear-gradient(to bottom, #302f2f, #4f545e);
 }
 
+.expertise-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .expertise-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .expertise-card {
-    padding: 40px 20px;
-    background: rgba(24, 24, 27, 0.2);
+    padding: 40px 24px;
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     text-align: center;
-    transition: all 0.4s ease;
-}
-
-.expertise-card:hover {
-    background: rgba(24, 24, 27, 0.4);
-    border-color: rgba(184, 134, 11, 0.3);
-    transform: translateY(-5px);
-}
-
-.expertise-number {
-    font-family: serif;
-    font-style: italic;
-    font-size: 48px;
-    color: rgba(184, 134, 11, 0.2);
-    margin-bottom: 20px;
-    line-height: 1;
 }
