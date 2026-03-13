@@ -68,7 +68,7 @@ const ContactsPage = () => {
                                         </div>
                                         <div>
                                             <p className="text-[10px] uppercase tracking-widest text-zinc-500 mb-1">Графік роботи</p>
-                                            <p className="text-xl font-light text-zinc-300">Пн — Сб: 09:00 - 19:00</p>
+                                            <p className="text-xl font-light text-zinc-300">Пн — Пт: 08:00 - 17:00</p>
                                         </div>
                                     </div>
                                 </div>
