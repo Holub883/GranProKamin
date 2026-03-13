@@ -13,7 +13,7 @@ export const categories = [
     'Подвійні',
     'Комплекси',
     'Ексклюзив',
-    'Різьблені',
+    'Для війських',
     'Художня робота',
     'Благоустрій'
 ];
@@ -93,7 +93,7 @@ export const projects: Project[] = [
     },
     {
         id: 10,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '010',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/10.jpg',
@@ -117,7 +117,7 @@ export const projects: Project[] = [
     },
     {
         id: 13,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '013',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/13.jpg',
@@ -125,7 +125,7 @@ export const projects: Project[] = [
     },
     {
         id: 14,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '014',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/14.jpg',
@@ -133,7 +133,7 @@ export const projects: Project[] = [
     },
     {
         id: 15,
-        category: 'Одинарні',
+        category: 'Для війських',
         title: '015',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/15.jpg',
@@ -157,7 +157,7 @@ export const projects: Project[] = [
     },
     {
         id: 18,
-        category: 'Одинарні',
+        category: 'Для війських',
         title: '018',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/18.jpg',
@@ -173,7 +173,7 @@ export const projects: Project[] = [
     },
     {
         id: 20,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '020',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/20.jpg',
@@ -220,7 +220,7 @@ export const projects: Project[] = [
         material: 'Габро'
     },    {
         id: 26,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '026',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/26.jpg',
@@ -234,7 +234,7 @@ export const projects: Project[] = [
         material: 'Габро'
     },    {
         id: 28,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '028',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/28.jpg',
@@ -248,7 +248,7 @@ export const projects: Project[] = [
         material: 'Габро'
     },    {
         id: 30,
-        category: 'Одинарні',
+        category: 'Еклюзив',
         title: '030',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/30.jpg',
@@ -256,7 +256,7 @@ export const projects: Project[] = [
     },
     {
         id: 31,
-        category: 'Одинарні',
+        category: 'Для війських',
         title: '031',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/31.jpg',
@@ -264,7 +264,7 @@ export const projects: Project[] = [
     },
     {
         id: 32,
-        category: 'Одинарні',
+        category: 'Еклюзив',
         title: '032',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/32.jpg',
@@ -280,7 +280,7 @@ export const projects: Project[] = [
     },
     {
         id: 34,
-        category: 'Одинарні',
+        category: 'Для війських',
         title: '034',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/34.jpg',
