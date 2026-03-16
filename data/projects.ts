@@ -364,4 +364,237 @@ export const projects: Project[] = [
         img: '/img/44.jpg',
         material: 'Габро'
     },
+    {
+        id: 45,
+        category: 'Одинарні',
+        title: '045',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/45.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 46,
+        category: 'Одинарні',
+        title: '046',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/46.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 47,
+        category: 'Одинарні',
+        title: '047',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/47.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 48,
+        category: 'Одинарні',
+        title: '048',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/48.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 49,
+        category: 'Одинарні',
+        title: '049',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/49.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 50,
+        category: 'Одинарні',
+        title: '050',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/50.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 51,
+        category: 'Одинарні',
+        title: '051',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/51.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 52,
+        category: 'Одинарні',
+        title: '052',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/52.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 53,
+        category: 'Одинарні',
+        title: '053',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/53.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 54,
+        category: 'Одинарні',
+        title: '054',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/54.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 55,
+        category: 'Одинарні',
+        title: '055',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/55.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 56,
+        category: 'Одинарні',
+        title: '050',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/50.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 57,
+        category: 'Одинарні',
+        title: '057',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/57.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 58,
+        category: 'Одинарні',
+        title: '058',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/58.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 59,
+        category: 'Одинарні',
+        title: '059',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/59.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 60,
+        category: 'Одинарні',
+        title: '060',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/60.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 61,
+        category: 'Одинарні',
+        title: '061',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/61.jpg',
+        material: 'Габро'
+    },    {
+        id: 62,
+        category: 'Одинарні',
+        title: '062',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/62.jpg',
+        material: 'Габро'
+    },    {
+        id: 63,
+        category: 'Одинарні',
+        title: '063',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/63.jpg',
+        material: 'Габро'
+    },    {
+        id: 64,
+        category: 'Одинарні',
+        title: '064',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/64.jpg',
+        material: 'Габро'
+    },    {
+        id: 65,
+        category: 'Одинарні',
+        title: '065',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/65.jpg',
+        material: 'Габро'
+    },    {
+        id: 66,
+        category: 'Одинарні',
+        title: '066',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/66.jpg',
+        material: 'Габро'
+    },    {
+        id: 67,
+        category: 'Одинарні',
+        title: '067',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/67.jpg',
+        material: 'Габро'
+    },    {
+        id: 68,
+        category: 'Одинарні',
+        title: '068',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/68.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 69,
+        category: 'Одинарні',
+        title: '069',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/69.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 70,
+        category: 'Одинарні',
+        title: '070',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/70.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 71,
+        category: 'Одинарні',
+        title: '071',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/71.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 72,
+        category: 'Одинарні',
+        title: '072',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/72.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 73,
+        category: 'Одинарні',
+        title: '073',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/73.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 74,
+        category: 'Одинарні',
+        title: '074',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/74.jpg',
+        material: 'Габро'
+    },
 ];
