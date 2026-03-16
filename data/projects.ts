@@ -292,4 +292,76 @@ export const projects: Project[] = [
         img: '/img/35.jpg',
         material: 'Габро'
     },
+    {
+        id: 36,
+        category: 'Одинарні',
+        title: '036',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/36.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 37,
+        category: 'Одинарні',
+        title: '037',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/37.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 38,
+        category: 'Одинарні',
+        title: '038',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/38.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 39,
+        category: 'Одинарні',
+        title: '039',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/39.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 40,
+        category: 'Одинарні',
+        title: '040',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/40.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 41,
+        category: 'Одинарні',
+        title: '041',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/41.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 42,
+        category: 'Одинарні',
+        title: '042',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/42.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 43,
+        category: 'Одинарні',
+        title: '043',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/43.jpg',
+        material: 'Габро'
+    },
+    {
+        id: 44,
+        category: 'Одинарні',
+        title: '044',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/44.jpg',
+        material: 'Габро'
+    },
 ];
