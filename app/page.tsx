@@ -12,9 +12,8 @@ import './style.css';
 const workCategories = [
     { title: 'Одинарні', slug: 'odynarni', img: '/img/image (5).webp', num: 'I' },
     { title: 'Подвійні', slug: 'podviyni', img: '/img/image (6).webp', num: 'II' },
-    { title: 'Комплекси', slug: 'kompleksy', img: '/img/image (3).webp', num: 'III' },
-    { title: 'Ексклюзив', slug: 'exclusive', img: '/img/image (1).webp', num: 'IV' },
-    { title: 'Для військових', slug: 'arms', img: '/img/image (1).webp', num: 'V' }
+    { title: 'Ексклюзив', slug: 'kompleksy', img: '/img/image (3).webp', num: 'III' },
+    { title: 'Для військових', slug: 'exclusive', img: '/img/image (1).webp', num: 'IV' },
 ];
 
 export default function Home() {
