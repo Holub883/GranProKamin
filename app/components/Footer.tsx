@@ -4,11 +4,6 @@ import './style/Footer.css';
 
 const socialLinks = [
     {
-        Icon: Send,
-        href: "https://t.me/+380986747919",
-        label: "Telegram"
-    },
-    {
         Icon: Instagram,
         href: "https://www.instagram.com/_granit_koros?igsh=MXJpdTd5eWZseGtjcQ==",
         label: "Instagram"

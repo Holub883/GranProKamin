@@ -81,9 +81,6 @@ const ContactsPage = () => {
                                     <a href="viber://chat?number=%2B380986747919" className="flex items-center gap-3 px-6 py-3 bg-zinc-900 border border-white/5 hover:border-[#b8860b]/50 transition-all text-xs uppercase tracking-widest font-bold">
                                         <MessageSquare size={16} className="text-[#b8860b]" /> Viber
                                     </a>
-                                    <a href="https://t.me/+380986747919" className="flex items-center gap-3 px-6 py-3 bg-zinc-900 border border-white/5 hover:border-[#b8860b]/50 transition-all text-xs uppercase tracking-widest font-bold">
-                                        <Send size={16} className="text-[#b8860b]" /> Telegram
-                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -65,7 +65,6 @@ const Header = () => {
                     </div>
 
                     <div className="social-links">
-                        <a href="https://t.me/+380986747919" className="social-icon"><Send size={18} /></a>
                         <a href="https://www.instagram.com/_granit_koros?igsh=MXJpdTd5eWZseGtjcQ==" className="social-icon"><Instagram size={18} /></a>
                         <a href="https://viber://chat?number=%2B380986747919" className="social-icon">
                             <MessageSquare size={18} />
