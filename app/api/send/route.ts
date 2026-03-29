@@ -13,7 +13,7 @@ export async function POST(request: Request) {
             subject: `Новий запит: ${name}`,
             html: `
                 <div style="font-family: sans-serif; line-height: 1.5; color: #333;">
-                    <h2>Нове повідомлення з сайту Poliasyk Memorial</h2>
+                    <h2>Нове повідомлення з сайту</h2>
                     <hr />
                     <p><strong>Ім'я:</strong> ${name}</p>
                     <p><strong>Телефон:</strong> ${phone}</p>
