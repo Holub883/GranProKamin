@@ -66,7 +66,7 @@ export const projects: Project[] = [
     },
     {
         id: 7,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '007',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/7.jpg',
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     },
     {
         id: 8,
-        category: 'Одинарні',
+        category: 'Військові',
         title: '008',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/8.jpg',
