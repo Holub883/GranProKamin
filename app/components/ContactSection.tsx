@@ -119,7 +119,6 @@ export const ContactSection = () => {
 
                             <button
                                 type="submit"
-                                // Кнопка активна ТІЛЬКИ коли капча пройдена (token існує)
                                 disabled={status === 'loading' || !captchaToken}
                                 className="contact-submit"
                             >
