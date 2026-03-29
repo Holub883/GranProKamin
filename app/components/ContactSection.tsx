@@ -108,12 +108,11 @@ export const ContactSection = () => {
 
                         <div className="form-footer">
                             <div className="captcha-container">
-                                {/* Якщо токен є — цей блок стає абсолютно порожнім (зникає) */}
                                 {!captchaToken && (
                                     <ReCAPTCHA
                                         ref={recaptchaRef}
                                         theme="light"
-                                        sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                                        sitekey="6LftG50sAAAAAKN-3YEmG4omVjShzbhxs-E25F16"
                                         onChange={(token) => setCaptchaToken(token)}
                                     />
                                 )}
