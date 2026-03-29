@@ -74,7 +74,7 @@ export const projects: Project[] = [
     },
     {
         id: 8,
-        category: 'Військові',
+        category: 'Для військових',
         title: '008',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/8.jpg',
