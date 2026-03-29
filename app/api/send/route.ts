@@ -5,12 +5,12 @@ const resend = new Resend('re_4LfUxz5b_8HXcGy2gv1ckshsk8MuyDZnN');
 
 export async function POST(request: Request) {
     try {
-        const { name, email, phone, message } = await request.json();
+        const { name, phone, service, message } = await request.json();
 
         const data = await resend.emails.send({
             from: 'onboarding@resend.dev',
             to: 'granprokamin@gmail.com',
-            subject: `Новий запит: ${name}`,
+            subject: `Новий запит: ${service} — ${name}`,
             html: `
                 <div style="font-family: sans-serif; line-height: 1.5; color: #333;">
                     <h2>Нове повідомлення з сайту</h2>
@@ -25,8 +25,9 @@ export async function POST(request: Request) {
                 </div>
             `
         });
-        return NextResponse.json(data);
-    } catch (error) {
-        return NextResponse.json({ error });
+
+        return NextResponse.json({ success: true, data });
+    } catch (error: any) {
+        return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }
