@@ -12,15 +12,19 @@ export async function POST(request: Request) {
             to: 'granprokamin@gmail.com',
             subject: `Новий запит: ${name}`,
             html: `
-        <h2>Нове повідомлення з сайту</h2>
-        <p><strong>Ім'я:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Телефон:</strong> ${phone}</p>
-        <p><strong>Повідомлення:</strong></p>
-        <p>${message}</p>
-      `
+                <div style="font-family: sans-serif; line-height: 1.5; color: #333;">
+                    <h2>Нове повідомлення з сайту Poliasyk Memorial</h2>
+                    <hr />
+                    <p><strong>Ім'я:</strong> ${name}</p>
+                    <p><strong>Телефон:</strong> ${phone}</p>
+                    <p><strong>Цікавить послуга:</strong> <span style="color: #b8860b; font-weight: bold;">${service}</span></p>
+                    <p><strong>Повідомлення:</strong></p>
+                    <div style="background: #f4f4f4; padding: 15px; border-radius: 5px;">
+                        ${message || 'Без коментарів'}
+                    </div>
+                </div>
+            `
         });
-
         return NextResponse.json(data);
     } catch (error) {
         return NextResponse.json({ error });
