@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const resend = new Resend('re_5RGto5o5_L1m3c4GwndW8xQvsYyysMcu5');
+const resend = new Resend('re_4LfUxz5b_8HXcGy2gv1ckshsk8MuyDZnN');
 
 export async function POST(request: Request) {
     try {
@@ -9,7 +9,7 @@ export async function POST(request: Request) {
 
         const data = await resend.emails.send({
             from: 'onboarding@resend.dev',
-            to: 'holub883@gmail.com',
+            to: 'granprokamin@gmail.com',
             subject: `Новий запит: ${name}`,
             html: `
         <h2>Нове повідомлення з сайту</h2>
