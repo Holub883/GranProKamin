@@ -7,11 +7,10 @@ export async function POST(request: Request) {
     try {
         const { name, phone, service, message, captcha } = await request.json();
 
-        // ПЕРЕВІРКА RECAPTCHA (тільки якщо вона прийшла з фронтенду)
+        // ПЕРЕВІРКА ТІЛЬКИ ЯКЩО КАПЧА ПРИЙШЛА (з інших сторінок)
         if (captcha) {
             const secretKey = "6LdiHp0sAAAAACkjQjc_hu1aOgsa1K_qqCmDoTBG";
             const googleVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`;
-
             const captchaResponse = await fetch(googleVerifyUrl, { method: 'POST' });
             const captchaData = await captchaResponse.json();
 
@@ -22,28 +21,16 @@ export async function POST(request: Request) {
 
         // ВІДПРАВКА ЛИСТА
         const { data, error } = await resend.emails.send({
-            from: 'Arkel Granit <info@arkel-granit.com>', // Ваш підтверджений домен
+            from: 'Arkel Granit <info@arkel-granit.com>',
             to: 'granprokamin@gmail.com',
             subject: `Запит: ${service} — ${name}`,
-            html: `
-                <div style="font-family: sans-serif; max-width: 600px; border: 1px solid #eee; padding: 20px; border-radius: 10px;">
-                    <h2 style="color: #b8860b; border-bottom: 2px solid #eee; padding-bottom: 10px;">Новий запит із сайту</h2>
-                    <p><strong>Клієнт:</strong> ${name}</p>
-                    <p><strong>Телефон:</strong> ${phone}</p>
-                    <p><strong>Послуга:</strong> ${service}</p>
-                    <p><strong>Повідомлення:</strong></p>
-                    <div style="background: #f9f9f9; padding: 15px; border-radius: 5px; border-left: 4px solid #b8860b;">
-                        ${message || 'Без коментарів'}
-                    </div>
-                </div>
-            `
+            html: `<h3>Нове замовлення</h3><p>Ім'я: ${name}</p><p>Тел: ${phone}</p><p>Послуга: ${service}</p>`
         });
 
         if (error) return NextResponse.json({ error }, { status: 400 });
-
         return NextResponse.json({ success: true, data });
 
     } catch (error: any) {
-        return NextResponse.json({ error: "Помилка сервера" }, { status: 500 });
+        return NextResponse.json({ error: "Серверна помилка" }, { status: 500 });
     }
 }
