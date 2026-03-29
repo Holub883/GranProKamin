@@ -7,9 +7,6 @@ export async function POST(request: Request) {
     try {
         const body = await request.json();
         const { name, phone, service, message, captcha } = body;
-
-        // 1. ГНУЧКА ПЕРЕВІРКА RECAPTCHA
-        // Перевіряємо капчу ТІЛЬКИ якщо вона прийшла з фронтенду
         if (captcha) {
             const secretKey = "6LdiHp0sAAAAACkjQjc_hu1aOgsa1K_qqCmDoTBG";
             const googleVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`;
@@ -24,9 +21,6 @@ export async function POST(request: Request) {
                 );
             }
         }
-
-        // 2. ВІДПРАВКА ЛИСТА
-        // Використовуємо onboarding@resend.dev, якщо домен ще не підтверджено
         const { data, error } = await resend.emails.send({
             from: 'onboarding@resend.dev',
             to: 'granprokamin@gmail.com',
