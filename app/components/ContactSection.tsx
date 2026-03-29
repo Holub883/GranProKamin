@@ -42,7 +42,6 @@ export const ContactSection = () => {
                 (e.target as HTMLFormElement).reset();
             } else {
                 setStatus('error');
-                // Якщо помилка — повертаємо капчу, щоб людина спробувала знову
                 setCaptchaToken(null);
                 recaptchaRef.current?.reset();
             }

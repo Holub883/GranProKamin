@@ -29,9 +29,9 @@ export const Footer = () => {
                         </a>
 
                         <div className="contact-details-list">
-                            <a href="mailto:stepanikolaevitch@gmail.com" className="contact-link">
+                            <a href="mailto:granprokamin@gmail.com" className="contact-link">
                                 <Mail size={16} className="text-red" />
-                                <span>stepanikolaevitch@gmail.com</span>
+                                <span>granprokamin@gmail.com</span>
                             </a>
                             <div className="contact-link">
                                 <Clock size={16} className="text-red" />

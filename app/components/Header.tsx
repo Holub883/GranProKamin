@@ -53,9 +53,9 @@ const Header = () => {
                         </a>
 
                         <div className="header-details">
-                            <a href="mailto:stepanikolaevitch@gmail.com" className="detail-item">
+                            <a href="mailto:granprokamin@gmail.com" className="detail-item">
                                 <Mail size={16} className="detail-icon" />
-                                <span>stepanikolaevitch@gmail.com</span>
+                                <span>granprokamin@gmail.com</span>
                             </a>
                             <div className="detail-item">
                                 <Clock size={16} className="detail-icon" />
