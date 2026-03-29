@@ -20,7 +20,6 @@ const ContactsPage = () => {
             phone: formData.get('userPhone'),
             service: formData.get('userService'),
             message: formData.get('userMessage'),
-            // Капча тут не додається, щоб бекенд пропустив перевірку Google
         };
 
         try {
@@ -42,7 +41,6 @@ const ContactsPage = () => {
             setStatus('error');
             console.error("Form error:", error);
             alert("Помилка при відправці. Спробуйте пізніше або зателефонуйте нам.");
-            // Повертаємо стан в idle, щоб кнопка знову стала активною
             setStatus('idle');
         }
     };
