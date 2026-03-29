@@ -26,7 +26,6 @@ export const ContactSection = () => {
             phone: formData.get('userPhone'),
             service: formData.get('userService'),
             message: formData.get('userMessage'),
-            email: 'client@website.com'
         };
 
         try {
