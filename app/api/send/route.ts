@@ -6,7 +6,7 @@ const resend = new Resend('re_4LfUxz5b_8HXcGy2gv1ckshsk8MuyDZnN');
 export async function POST(request: Request) {
     try {
         const { name, phone, service, message, captcha } = await request.json();
-        const secretKey = "6LftG50sAAAAAB3zRfotwyCib9cn5396heOjFeUR";
+        const secretKey = "6LdiHp0sAAAAACkjQjc_hu1aOgsa1K_qqCmDoTBG";
         const googleVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${secretKey}&response=${captcha}`;
 
         const captchaResponse = await fetch(googleVerifyUrl, { method: 'POST' });

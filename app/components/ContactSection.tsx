@@ -112,7 +112,7 @@ export const ContactSection = () => {
                                     <ReCAPTCHA
                                         ref={recaptchaRef}
                                         theme="light"
-                                        sitekey="6LftG50sAAAAAKN-3YEmG4omVjShzbhxs-E25F16"
+                                        sitekey="6LdiHp0sAAAAALmOAHMl0ZhbCmG6fuRzWxcI5do7"
                                         onChange={(token) => setCaptchaToken(token)}
                                     />
                                 )}
