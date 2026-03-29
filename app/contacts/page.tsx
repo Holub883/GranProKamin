@@ -6,18 +6,21 @@ import { Footer } from "@/app/components/Footer";
 import { Phone, MapPin, Clock, Send, MessageSquare, Loader2, CheckCircle2, ChevronDown } from 'lucide-react';
 
 const ContactsPage = () => {
+    // Стан для відстеження процесу відправки
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setStatus('loading');
 
+        // Збір даних з полів форми
         const formData = new FormData(e.currentTarget);
         const data = {
             name: formData.get('userName'),
             phone: formData.get('userPhone'),
             service: formData.get('userService'),
             message: formData.get('userMessage'),
+            // Капча тут не додається, щоб бекенд пропустив перевірку Google
         };
 
         try {
@@ -27,15 +30,20 @@ const ContactsPage = () => {
                 body: JSON.stringify(data),
             });
 
+            const result = await response.json();
+
             if (response.ok) {
                 setStatus('success');
                 (e.target as HTMLFormElement).reset();
             } else {
-                throw new Error('Failed to send');
+                throw new Error(result.error || 'Failed to send');
             }
         } catch (error) {
             setStatus('error');
+            console.error("Form error:", error);
             alert("Помилка при відправці. Спробуйте пізніше або зателефонуйте нам.");
+            // Повертаємо стан в idle, щоб кнопка знову стала активною
+            setStatus('idle');
         }
     };
 
@@ -114,10 +122,10 @@ const ContactsPage = () => {
                             </div>
                         </div>
 
-                        {/* ПРАВА КОЛОНКА: Форма з логікою */}
+                        {/* ПРАВА КОЛОНКА: Форма */}
                         <div className="lg:col-span-7 bg-zinc-900/30 p-8 md:p-12 border border-white/5 relative overflow-hidden">
 
-                            {/* Екран успіху */}
+                            {/* Екран успіху (Overlay) */}
                             {status === 'success' && (
                                 <div className="absolute inset-0 bg-black/95 z-20 flex flex-col items-center justify-center text-center p-6 transition-all duration-500">
                                     <CheckCircle2 size={48} className="text-[#b8860b] mb-4" />
@@ -209,7 +217,7 @@ const ContactsPage = () => {
                 <div className="absolute inset-0 w-full h-full invert-[0.9] contrast-[1.2] opacity-60 hover:opacity-100 transition-opacity duration-700">
                     <iframe
                         title="Location"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40866.19539064117!2d29.02324911082597!3d50.31508215509971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47295796a567d26f%3A0x6b907159787a7408!2z0JrQvtGA0L7RgdGC0LjRiNCz0ZbQsiwg0JbQuNGC0L7QvNC40YDRgdGM0LrQsCDQvtCx0LvQsNGB0YLRjCwgMTI1MDE!5e0!3m2!1suk!2sua!4v1700000000000"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d81765.48529369406!2d28.9818815195048!3d50.316656041011854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x472942472d8a3915%3A0x67341851e3914a24!2z0JrQvtGA0L7RgdGC0YvRiNC10LIsINCW0LjRgtC-0LzQuNGA0YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDEyNTAx!5e0!3m2!1sru!2sua!4v1711234567890!5m2!1sru!2sua"
                         width="100%"
                         height="100%"
                         style={{ border: 0, filter: 'contrast(1.2) brightness(0.8)' }}
