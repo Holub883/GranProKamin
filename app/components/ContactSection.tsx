@@ -26,6 +26,7 @@ export const ContactSection = () => {
             phone: formData.get('userPhone'),
             service: formData.get('userService'),
             message: formData.get('userMessage'),
+            captcha: captchaToken,
         };
 
         try {
@@ -38,22 +39,22 @@ export const ContactSection = () => {
             if (response.ok) {
                 setStatus('success');
                 setCaptchaToken(null);
-                recaptchaRef.current?.reset();
                 (e.target as HTMLFormElement).reset();
             } else {
                 setStatus('error');
-                alert("Помилка при відправці. Спробуйте ще раз.");
+                // Якщо помилка — повертаємо капчу, щоб людина спробувала знову
+                setCaptchaToken(null);
+                recaptchaRef.current?.reset();
             }
         } catch (error) {
             setStatus('error');
-            console.error("Submission error:", error);
+            setCaptchaToken(null);
         }
     };
 
     return (
         <section className="contact-section">
             <div className="contact-container">
-
                 <div className="contact-header">
                     <div className="contact-badge">
                         <div className="badge-line" />
@@ -63,9 +64,7 @@ export const ContactSection = () => {
                 </div>
 
                 <div className="contact-form-container">
-                    {/* Додано onSubmit */}
                     <form className="contact-form" onSubmit={handleSubmit}>
-
                         {status === 'success' && (
                             <div className="success-overlay">
                                 <Send size={32} className="success-icon" />
@@ -80,24 +79,12 @@ export const ContactSection = () => {
                         <div className="form-grid">
                             <div className="input-group">
                                 <label className="input-label">Ваше ім'я</label>
-                                <input
-                                    name="userName"
-                                    type="text"
-                                    placeholder="Олександр"
-                                    required
-                                    className="form-input"
-                                />
+                                <input name="userName" type="text" placeholder="Олександр" required className="form-input" />
                             </div>
 
                             <div className="input-group">
                                 <label className="input-label">Телефон</label>
-                                <input
-                                    name="userPhone"
-                                    type="tel"
-                                    placeholder="+38 (0__) ___ __ __"
-                                    required
-                                    className="form-input"
-                                />
+                                <input name="userPhone" type="tel" placeholder="+38 (0__) ___ __ __" required className="form-input" />
                             </div>
 
                             <div className="input-group full-width">
@@ -115,26 +102,29 @@ export const ContactSection = () => {
 
                             <div className="input-group full-width">
                                 <label className="input-label">Повідомлення</label>
-                                <textarea
-                                    name="userMessage"
-                                    rows={2}
-                                    placeholder="Опишіть ваші побажання..."
-                                    className="form-textarea"
-                                ></textarea>
+                                <textarea name="userMessage" rows={2} placeholder="Опишіть ваші побажання..." className="form-textarea"></textarea>
                             </div>
                         </div>
 
                         <div className="form-footer">
                             <div className="captcha-container">
-                                <ReCAPTCHA
-                                    ref={recaptchaRef}
-                                    theme="light"
-                                    sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
-                                    onChange={(token) => setCaptchaToken(token)}
-                                />
+                                {/* Якщо токен є — цей блок стає абсолютно порожнім (зникає) */}
+                                {!captchaToken && (
+                                    <ReCAPTCHA
+                                        ref={recaptchaRef}
+                                        theme="light"
+                                        sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                                        onChange={(token) => setCaptchaToken(token)}
+                                    />
+                                )}
                             </div>
 
-                            <button type="submit" disabled={status === 'loading'} className="contact-submit">
+                            <button
+                                type="submit"
+                                // Кнопка активна ТІЛЬКИ коли капча пройдена (token існує)
+                                disabled={status === 'loading' || !captchaToken}
+                                className="contact-submit"
+                            >
                                 {status === 'loading' ? (
                                     <Loader2 className="animate-spin" size={20} />
                                 ) : (
