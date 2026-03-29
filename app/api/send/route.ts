@@ -1,7 +1,7 @@
 import { Resend } from 'resend';
 import { NextResponse } from 'next/server';
 
-const resend = new Resend('re_5RGto5o5_L1m3c4GwndW8xQvsYyysMcu5'); // Отримаєте на resend.com
+const resend = new Resend('re_5RGto5o5_L1m3c4GwndW8xQvsYyysMcu5');
 
 export async function POST(request: Request) {
     try {
