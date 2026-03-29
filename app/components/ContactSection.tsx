@@ -10,51 +10,105 @@ export const ContactSection = () => {
     const [captchaToken, setCaptchaToken] = useState<string | null>(null);
     const recaptchaRef = useRef<ReCAPTCHA>(null);
 
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        if (!captchaToken) {
+            alert("Будь ласка, підтвердіть, що ви не робот");
+            return;
+        }
+
+        setStatus('loading');
+
+        const formData = new FormData(e.currentTarget);
+        const data = {
+            name: formData.get('userName'),
+            phone: formData.get('userPhone'),
+            service: formData.get('userService'),
+            message: formData.get('userMessage'),
+            email: 'client@website.com'
+        };
+
+        try {
+            const response = await fetch('/api/send', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                setStatus('success');
+                setCaptchaToken(null);
+                recaptchaRef.current?.reset();
+                (e.target as HTMLFormElement).reset();
+            } else {
+                setStatus('error');
+                alert("Помилка при відправці. Спробуйте ще раз.");
+            }
+        } catch (error) {
+            setStatus('error');
+            console.error("Submission error:", error);
+        }
+    };
+
     return (
         <section className="contact-section">
             <div className="contact-container">
 
-                {/* Заголовок у стилі Hero */}
                 <div className="contact-header">
                     <div className="contact-badge">
                         <div className="badge-line" />
                         <span>Зворотний зв'язок</span>
                     </div>
-                    <h2 className="contact-title">Обговорити <span>проект</span></h2>
+                    <h2 className="contact-title">Обговорити <span>проєкт</span></h2>
                 </div>
 
-                {/* ФОРМА */}
                 <div className="contact-form-container">
-                    <form className="contact-form">
+                    {/* Додано onSubmit */}
+                    <form className="contact-form" onSubmit={handleSubmit}>
 
                         {status === 'success' && (
                             <div className="success-overlay">
                                 <Send size={32} className="success-icon" />
                                 <h3 className="success-title">Надіслано</h3>
                                 <p className="success-desc">Ми зв'яжемося з вами найближчим часом.</p>
-                                <button onClick={() => setStatus('idle')} className="back-btn">Повернутися</button>
+                                <button type="button" onClick={() => setStatus('idle')} className="back-btn">
+                                    Повернутися
+                                </button>
                             </div>
                         )}
 
                         <div className="form-grid">
                             <div className="input-group">
                                 <label className="input-label">Ваше ім'я</label>
-                                <input type="text" placeholder="Олександр" required className="form-input" />
+                                <input
+                                    name="userName"
+                                    type="text"
+                                    placeholder="Олександр"
+                                    required
+                                    className="form-input"
+                                />
                             </div>
 
                             <div className="input-group">
                                 <label className="input-label">Телефон</label>
-                                <input type="tel" placeholder="+38 (0__) ___ __ __" required className="form-input" />
+                                <input
+                                    name="userPhone"
+                                    type="tel"
+                                    placeholder="+38 (0__) ___ __ __"
+                                    required
+                                    className="form-input"
+                                />
                             </div>
 
                             <div className="input-group full-width">
                                 <label className="input-label">Яка послуга цікавить?</label>
                                 <div className="select-wrapper">
-                                    <select className="form-select">
-                                        <option>Виготовлення пам'ятника</option>
-                                        <option>3D Дизайн меморіалу</option>
-                                        <option>Реставрація та догляд</option>
-                                        <option>Благоустрій території</option>
+                                    <select name="userService" className="form-select">
+                                        <option value="Виготовлення пам'ятника">Виготовлення пам'ятника</option>
+                                        <option value="3D Дизайн меморіалу">3D Дизайн меморіалу</option>
+                                        <option value="Реставрація та догляд">Реставрація та догляд</option>
+                                        <option value="Благоустрій території">Благоустрій території</option>
                                     </select>
                                     <ChevronDown size={16} className="select-arrow" />
                                 </div>
@@ -62,7 +116,12 @@ export const ContactSection = () => {
 
                             <div className="input-group full-width">
                                 <label className="input-label">Повідомлення</label>
-                                <textarea rows={2} placeholder="Опишіть ваші побажання..." className="form-textarea"></textarea>
+                                <textarea
+                                    name="userMessage"
+                                    rows={2}
+                                    placeholder="Опишіть ваші побажання..."
+                                    className="form-textarea"
+                                ></textarea>
                             </div>
                         </div>
 

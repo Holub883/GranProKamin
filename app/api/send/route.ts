@@ -8,11 +8,11 @@ export async function POST(request: Request) {
         const { name, email, phone, message } = await request.json();
 
         const data = await resend.emails.send({
-            from: 'onboarding@resend.dev', // Пізніше можна змінити на свій домен
-            to: 'holub883@gmail.com',// Ваша пошта
+            from: 'onboarding@resend.dev',
+            to: 'granprokamin@gmail.com',
             subject: `Новий запит: ${name}`,
             html: `
-        <h2>Нове повідомлення з сайту Poliasyk Memorial</h2>
+        <h2>Нове повідомлення з сайту</h2>
         <p><strong>Ім'я:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Телефон:</strong> ${phone}</p>
