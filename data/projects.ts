@@ -350,7 +350,7 @@ export const projects: Project[] = [
     },
     {
         id: 43,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '043',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/70.jpg',
