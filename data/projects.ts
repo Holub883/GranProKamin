@@ -156,7 +156,7 @@ export const projects: Project[] = [
         category: 'Одинарні',
         title: '018',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/18.jpg',
+        img: '/img/38.jpg',
         material: '43000'
     },
     {
