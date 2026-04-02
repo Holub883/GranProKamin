@@ -80,7 +80,7 @@ const SingleMonumentsPage = () => {
                                     <h3 className="text-xl font-serif italic text-white">{item.title}</h3>
                                     <div className="pt-4 flex items-center justify-between border-t border-white/5">
                                         <Link href="/contacts" className="text-[9px] uppercase tracking-widest text-white hover:text-[#b8860b] transition-colors">
-                                            Замовити прорахунок
+                                            Замовити
                                         </Link>
                                     </div>
                                 </div>
