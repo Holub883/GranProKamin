@@ -134,7 +134,7 @@ export const projects: Project[] = [
         title: '015',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/33.jpg',
-
+        material: '120000'
     },
     {
         id: 16,
