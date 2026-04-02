@@ -1,24 +1,39 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
 import { projects } from '@/data/projects';
-import { ArrowLeft, Maximize2, Sparkles, Gem, PenTool } from 'lucide-react';
+import { ArrowLeft, Maximize2, Sparkles, Shield, PenTool, ArrowUpDown } from 'lucide-react';
 
 const ArmsPage = () => {
-    const filteredItems = projects.filter(p => p.category === 'Для військових');
+    // Стан для сортування: default, asc (дешевші), desc (дорожчі)
+    const [sortOrder, setSortOrder] = useState<'default' | 'asc' | 'desc'>('default');
 
-    const sortedItems = [...filteredItems].sort((a, b) => {
-        const getPrice = (val: any) => {
+    // 1. Фільтруємо елементи
+    const filteredItems = useMemo(() => {
+        return projects.filter(p => p.category === 'Для військових');
+    }, []);
+
+    // 2. Сортуємо елементи
+    const sortedItems = useMemo(() => {
+        const getPrice = (val: string | number | undefined | null): number => {
             if (!val) return 0;
             return parseFloat(val.toString().replace(/\D/g, '')) || 0;
         };
 
-        return getPrice(a.material) - getPrice(b.material);
-    });
+        const items = [...filteredItems];
+
+        if (sortOrder === 'asc') {
+            return items.sort((a, b) => getPrice(a.material) - getPrice(b.material));
+        } else if (sortOrder === 'desc') {
+            return items.sort((a, b) => getPrice(b.material) - getPrice(a.material));
+        }
+
+        return items; // default
+    }, [filteredItems, sortOrder]);
 
     return (
         <main className="min-h-screen bg-[#050505] text-[#e5e5e5]">
@@ -34,11 +49,11 @@ const ArmsPage = () => {
                         <div>
                             <span className="text-zinc-500 text-[10px] uppercase tracking-[0.5em] mb-4 block">Категорія</span>
                             <h1 className="text-5xl md:text-8xl font-serif italic text-white tracking-tighter">
-                                Для військових<br /> <span className="text-[#d32f2f]">вироби</span>
+                                Для військових<br /> <span className="text-[#d32f2f]">меморіали</span>
                             </h1>
                         </div>
                         <p className="text-zinc-500 text-lg font-light leading-relaxed max-w-md">
-                            Унікальні авторські проекти, створені за індивідуальними ескізами. Складне ручне різьблення та рідкісні породи каменю.
+                            Вшанування пам'яті героїв. Проекти з військовою символікою, емблемами родів військ та особливим художнім оформленням.
                         </p>
                     </div>
                 </div>
@@ -47,27 +62,60 @@ const ArmsPage = () => {
             <section className="py-12 bg-[#0a0a0a] border-b border-white/5">
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
                     <div className="flex items-center gap-4">
-                        <Sparkles className="text-[#d32f2f]" size={24} strokeWidth={1} />
-                        <span className="text-[10px] uppercase tracking-widest font-medium">Ручна робота</span>
+                        <Shield className="text-[#d32f2f]" size={24} strokeWidth={1} />
+                        <span className="text-[10px] uppercase tracking-widest font-medium">Військова символіка</span>
                     </div>
                     <div className="flex items-center gap-4">
-                        <Gem className="text-[#d32f2f]" size={24} strokeWidth={1} />
-                        <span className="text-[10px] uppercase tracking-widest font-medium">Рідкісні граніти</span>
+                        <Sparkles className="text-[#d32f2f]" size={24} strokeWidth={1} />
+                        <span className="text-[10px] uppercase tracking-widest font-medium">Гідне вшанування</span>
                     </div>
                     <div className="flex items-center gap-4">
                         <PenTool className="text-[#d32f2f]" size={24} strokeWidth={1} />
-                        <span className="text-[10px] uppercase tracking-widest font-medium">Авторський ескіз</span>
+                        <span className="text-[10px] uppercase tracking-widest font-medium">Індивідуальні шеврони</span>
                     </div>
                 </div>
             </section>
 
             <section className="py-24 px-6">
                 <div className="max-w-7xl mx-auto">
+
+                    {/* ПАНЕЛЬ СОРТУВАННЯ */}
+                    <div className="flex flex-wrap items-center justify-between gap-4 mb-12 pb-6 border-b border-white/5">
+                        <div className="flex items-center gap-2 text-zinc-500">
+                            <ArrowUpDown size={14} />
+                            <span className="text-[10px] uppercase tracking-widest font-bold">Сортувати:</span>
+                        </div>
+                        <div className="flex gap-2">
+                            {[
+                                { label: 'За замовчуванням', value: 'default' },
+                                { label: 'Дешевші', value: 'asc' },
+                                { label: 'Дорожчі', value: 'desc' },
+                            ].map((btn) => (
+                                <button
+                                    key={btn.value}
+                                    onClick={() => setSortOrder(btn.value as any)}
+                                    className={`px-4 py-2 text-[9px] uppercase tracking-widest font-bold transition-all border ${
+                                        sortOrder === btn.value
+                                            ? 'bg-[#d32f2f] border-[#d32f2f] text-white'
+                                            : 'bg-transparent border-white/10 text-zinc-400 hover:border-white/40'
+                                    }`}
+                                >
+                                    {btn.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                         {sortedItems.map((item) => (
                             <div key={item.id} className="group space-y-6">
                                 <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5">
-                                    <Image src={item.img} alt={item.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                                    <Image
+                                        src={item.img}
+                                        alt={item.title}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                    />
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
                                     <div className="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity border border-white/20">
                                         <Maximize2 size={20} className="text-white" />

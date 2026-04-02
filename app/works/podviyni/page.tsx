@@ -1,27 +1,39 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import Header from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
 import { projects } from '@/data/projects';
-import { ArrowLeft, Maximize2, Ruler, ShieldCheck, Paintbrush } from 'lucide-react';
+import { ArrowLeft, Maximize2, Ruler, ShieldCheck, Paintbrush, ArrowUpDown } from 'lucide-react';
 
 const DoubleMonumentsPage = () => {
-    // 1. Фільтруємо саме подвійні
-    const filteredItems = projects.filter(p => p.category === 'Подвійні');
+    // Стан для типу сортування: за замовчуванням, дешевші, дорожчі
+    const [sortOrder, setSortOrder] = useState<'default' | 'asc' | 'desc'>('default');
 
-    // 2. Сортуємо за ціною (від меншої до більшої)
-    const sortedItems = [...filteredItems].sort((a, b) => {
+    // 1. Фільтруємо подвійні пам'ятники
+    const filteredItems = useMemo(() => {
+        return projects.filter(p => p.category === 'Подвійні');
+    }, []);
+
+    // 2. Логіка сортування
+    const sortedItems = useMemo(() => {
         const getPrice = (val: string | number | undefined | null): number => {
             if (!val) return 0;
-            // Видаляємо всі нецифрові символи для коректного порівняння чисел
             return parseFloat(val.toString().replace(/\D/g, '')) || 0;
         };
 
-        return getPrice(a.material) - getPrice(b.material);
-    });
+        const items = [...filteredItems];
+
+        if (sortOrder === 'asc') {
+            return items.sort((a, b) => getPrice(a.material) - getPrice(b.material));
+        } else if (sortOrder === 'desc') {
+            return items.sort((a, b) => getPrice(b.material) - getPrice(a.material));
+        }
+
+        return items; // 'default'
+    }, [filteredItems, sortOrder]);
 
     return (
         <main className="min-h-screen bg-[#050505] text-[#e5e5e5]">
@@ -66,8 +78,35 @@ const DoubleMonumentsPage = () => {
 
             <section className="py-24 px-6">
                 <div className="max-w-7xl mx-auto">
+
+                    {/* КНОПКИ СОРТУВАННЯ */}
+                    <div className="flex flex-wrap items-center justify-between gap-4 mb-12 pb-6 border-b border-white/5">
+                        <div className="flex items-center gap-2 text-zinc-500">
+                            <ArrowUpDown size={14} />
+                            <span className="text-[10px] uppercase tracking-widest font-bold">Сортувати за ціною:</span>
+                        </div>
+                        <div className="flex gap-2">
+                            {[
+                                { label: 'За замовчуванням', value: 'default' },
+                                { label: 'Дешевші', value: 'asc' },
+                                { label: 'Дорожчі', value: 'desc' },
+                            ].map((btn) => (
+                                <button
+                                    key={btn.value}
+                                    onClick={() => setSortOrder(btn.value as any)}
+                                    className={`px-4 py-2 text-[9px] uppercase tracking-widest font-bold transition-all border ${
+                                        sortOrder === btn.value
+                                            ? 'bg-[#d32f2f] border-[#d32f2f] text-white'
+                                            : 'bg-transparent border-white/10 text-zinc-400 hover:border-white/40'
+                                    }`}
+                                >
+                                    {btn.label}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {/* ТУТ ВИПРАВЛЕНО: Використовуємо саме sortedItems */}
                         {sortedItems.map((item) => (
                             <div key={item.id} className="group space-y-6">
                                 <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5">
