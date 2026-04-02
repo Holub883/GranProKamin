@@ -9,8 +9,18 @@ import { projects } from '@/data/projects';
 import { ArrowLeft, Maximize2, Ruler, ShieldCheck, Paintbrush } from 'lucide-react';
 
 const DoubleMonumentsPage = () => {
-    // Фільтруємо саме подвійні
-    const doubleMonuments = projects.filter(p => p.category === 'Подвійні');
+    // 1. Фільтруємо саме подвійні
+    const filteredItems = projects.filter(p => p.category === 'Подвійні');
+
+    // 2. Сортуємо за ціною (від меншої до більшої)
+    const sortedDoubleMonuments = [...filteredItems].sort((a, b) => {
+        const getPrice = (val) => {
+            if (!val) return 0;
+            // Видаляємо все, крім цифр, щоб коректно порівняти числа
+            return parseFloat(val.toString().replace(/\D/g, '')) || 0;
+        };
+        return getPrice(a.material) - getPrice(b.material);
+    });
 
     return (
         <main className="min-h-screen bg-[#050505] text-[#e5e5e5]">
@@ -40,15 +50,15 @@ const DoubleMonumentsPage = () => {
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-white/80">
                     <div className="flex items-center gap-4">
                         <Ruler className="text-[#d32f2f]" size={24} strokeWidth={1} />
-                        <span className="text-[10px] uppercase tracking-widest">Великий вибір форм</span>
+                        <span className="text-[10px] uppercase tracking-widest font-medium">Великий вибір форм</span>
                     </div>
                     <div className="flex items-center gap-4">
                         <Paintbrush className="text-[#d32f2f]" size={24} strokeWidth={1} />
-                        <span className="text-[10px] uppercase tracking-widest">Парні портрети</span>
+                        <span className="text-[10px] uppercase tracking-widest font-medium">Парні портрети</span>
                     </div>
                     <div className="flex items-center gap-4">
                         <ShieldCheck className="text-[#d32f2f]" size={24} strokeWidth={1} />
-                        <span className="text-[10px] uppercase tracking-widest">Гарантія 10 років</span>
+                        <span className="text-[10px] uppercase tracking-widest font-medium">Гарантія 10 років</span>
                     </div>
                 </div>
             </section>
@@ -56,7 +66,8 @@ const DoubleMonumentsPage = () => {
             <section className="py-24 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {doubleMonuments.map((item) => (
+                        {/* Використовуємо відсортований масив */}
+                        {sortedDoubleMonuments.map((item) => (
                             <div key={item.id} className="group space-y-6">
                                 <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5">
                                     <Image src={item.img} alt={item.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -69,12 +80,15 @@ const DoubleMonumentsPage = () => {
                                     <div className="pt-4 flex items-start justify-between border-t border-white/5">
                                         <div className="space-y-1.5">
                                             <h3 className="text-xl font-serif italic text-white leading-tight">{item.title}</h3>
-                                            {/* Оновлений блок ціни */}
+
+                                            {/* Блок ціни з покращеною видимістю */}
                                             <div className="flex items-baseline gap-1">
-                                    <span className="text-white text-lg font-semibold tracking-tight">
-                                        {item.material ? item.material : 'Ціна за запитом'}
-                                    </span>
-                                                {item.material && <span className="text-white text-lg font-semibold tracking-tight">грн</span>}
+                                                <span className="text-white text-lg font-semibold tracking-tight">
+                                                    {item.material ? item.material : 'Ціна за запитом'}
+                                                </span>
+                                                {item.material && (
+                                                    <span className="text-white text-lg font-semibold tracking-tight ml-1">грн</span>
+                                                )}
                                             </div>
                                         </div>
                                         <Link href="/contacts" className="inline-block px-4 py-2 border border-white/10 text-[10px] uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-300 font-bold">
