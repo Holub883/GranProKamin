@@ -9,7 +9,20 @@ import { projects } from '@/data/projects';
 import { ArrowLeft, Maximize2, Sparkles, Gem, PenTool } from 'lucide-react';
 
 const ArmsPage = () => {
+    // 1. Фільтруємо елементи
     const filteredItems = projects.filter(p => p.category === 'Для військових');
+
+    // 2. Сортуємо елементи за ціною (поле material)
+    const sortedItems = [...filteredItems].sort((a, b) => {
+        // Функція для витягування тільки цифр з рядка
+        const getPrice = (val) => {
+            if (!val) return 0;
+            // Видаляємо всі нецифрові символи (пробіли, грн тощо)
+            return parseFloat(val.toString().replace(/\D/g, '')) || 0;
+        };
+
+        return getPrice(a.material) - getPrice(b.material);
+    });
 
     return (
         <main className="min-h-screen bg-[#050505] text-[#e5e5e5]">
@@ -17,7 +30,7 @@ const ArmsPage = () => {
 
             <section className="pt-32 pb-20 px-6 border-b border-white/5">
                 <div className="max-w-7xl mx-auto">
-                    <Link href="/ "className="flex items-center gap-2 text-[#d32f2f] text-[10px] uppercase tracking-[0.3em] mb-12 hover:translate-x-[-5px] transition-transform font-bold">
+                    <Link href="/" className="flex items-center gap-2 text-[#d32f2f] text-[10px] uppercase tracking-[0.3em] mb-12 hover:translate-x-[-5px] transition-transform font-bold">
                         <ArrowLeft size={14} /> Назад до всіх робіт
                     </Link>
 
@@ -55,7 +68,8 @@ const ArmsPage = () => {
             <section className="py-24 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {filteredItems.map((item) => (
+                        {/* Використовуємо sortedItems замість filteredItems */}
+                        {sortedItems.map((item) => (
                             <div key={item.id} className="group space-y-6">
                                 <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5">
                                     <Image src={item.img} alt={item.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -68,12 +82,11 @@ const ArmsPage = () => {
                                     <div className="pt-4 flex items-start justify-between border-t border-white/5">
                                         <div className="space-y-1.5">
                                             <h3 className="text-xl font-serif italic text-white leading-tight">{item.title}</h3>
-                                            {/* Оновлений блок ціни */}
                                             <div className="flex items-baseline gap-1">
-                                    <span className="text-white text-lg font-semibold tracking-tight">
-                                        {item.material ? item.material : 'Ціна за запитом'}
-                                    </span>
-                                                {item.material && <span className="text-white text-lg font-semibold tracking-tight">грн</span>}
+                                                <span className="text-white text-lg font-semibold tracking-tight">
+                                                    {item.material ? item.material : 'Ціна за запитом'}
+                                                </span>
+                                                {item.material && <span className="text-white text-lg font-semibold tracking-tight ml-1">грн</span>}
                                             </div>
                                         </div>
                                         <Link href="/contacts" className="inline-block px-4 py-2 border border-white/10 text-[10px] uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-300 font-bold">

@@ -5,21 +5,30 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Header from "@/app/components/Header";
 import { Footer } from "@/app/components/Footer";
-import { projects } from '@/data/projects'; // Імпортуємо наш файл з даними
+import { projects } from '@/data/projects';
 import { ArrowLeft, Maximize2, Ruler, ShieldCheck, Paintbrush } from 'lucide-react';
 
 const SingleMonumentsPage = () => {
-    // Фільтруємо лише одинарні пам'ятники з нашої бази даних
-    const singleMonuments = projects.filter(p => p.category === 'Одинарні');
+    // 1. Фільтруємо лише одинарні пам'ятники
+    const filteredItems = projects.filter(p => p.category === 'Одинарні');
+
+    // 2. Сортуємо за ціною (від дешевших до дорожчих)
+    const sortedMonuments = [...filteredItems].sort((a, b) => {
+        const getPrice = (val) => {
+            if (!val) return 0;
+            return parseFloat(val.toString().replace(/\D/g, '')) || 0;
+        };
+        return getPrice(a.material) - getPrice(b.material);
+    });
 
     return (
         <main className="min-h-screen bg-[#050505] text-[#e5e5e5]">
             <Header />
 
-            {/* 1. HERO СЕКЦІЯ КАТЕГОРІЇ */}
+            {/* 1. HERO СЕКЦІЯ */}
             <section className="pt-32 pb-20 px-6 border-b border-white/5">
                 <div className="max-w-7xl mx-auto">
-                    <Link href="/" className="flex items-center gap-2 text-[#b8860b] text-[10px] uppercase tracking-[0.3em] mb-12 hover:translate-x-[-5px] transition-transform">
+                    <Link href="/" className="flex items-center gap-2 text-[#b8860b] text-[10px] uppercase tracking-[0.3em] mb-12 hover:translate-x-[-5px] transition-transform font-bold">
                         <ArrowLeft size={14} /> Назад до всіх робіт
                     </Link>
 
@@ -37,29 +46,29 @@ const SingleMonumentsPage = () => {
                 </div>
             </section>
 
-            {/* 2. ПЕРЕВАГИ САМЕ ЦІЄЇ КАТЕГОРІЇ */}
+            {/* 2. ПЕРЕВАГИ */}
             <section className="py-12 bg-[#0a0a0a] border-b border-white/5">
                 <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
                     <div className="flex items-center gap-4">
                         <Ruler className="text-[#b8860b]" size={24} strokeWidth={1} />
-                        <span className="text-[10px] uppercase tracking-widest">Компактність та естетика</span>
+                        <span className="text-[10px] uppercase tracking-widest font-medium">Компактність та естетика</span>
                     </div>
                     <div className="flex items-center gap-4">
                         <Paintbrush className="text-[#b8860b]" size={24} strokeWidth={1} />
-                        <span className="text-[10px] uppercase tracking-widest">Художнє гравіювання</span>
+                        <span className="text-[10px] uppercase tracking-widest font-medium">Художнє гравіювання</span>
                     </div>
                     <div className="flex items-center gap-4">
                         <ShieldCheck className="text-[#b8860b]" size={24} strokeWidth={1} />
-                        <span className="text-[10px] uppercase tracking-widest">Висока стійкість граніту</span>
+                        <span className="text-[10px] uppercase tracking-widest font-medium">Висока стійкість граніту</span>
                     </div>
                 </div>
             </section>
 
-            {/* 3. ГАЛЕРЕЯ РОБІТ */}
+            {/* 3. ГАЛЕРЕЯ РОБІТ (З СОРТУВАННЯМ) */}
             <section className="py-24 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {singleMonuments.map((item) => (
+                        {sortedMonuments.map((item) => (
                             <div key={item.id} className="group space-y-6">
                                 <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5">
                                     <Image
@@ -69,9 +78,7 @@ const SingleMonumentsPage = () => {
                                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
-
-                                    {/* Кнопка збільшення */}
-                                    <div className="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <div className="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity border border-white/20">
                                         <Maximize2 size={20} className="text-white" />
                                     </div>
                                 </div>
@@ -80,12 +87,13 @@ const SingleMonumentsPage = () => {
                                     <div className="pt-4 flex items-start justify-between border-t border-white/5">
                                         <div className="space-y-1.5">
                                             <h3 className="text-xl font-serif italic text-white leading-tight">{item.title}</h3>
-                                            {/* Оновлений блок ціни */}
                                             <div className="flex items-baseline gap-1">
-                                    <span className="text-white text-lg font-semibold tracking-tight">
-                                        {item.material ? item.material : 'Ціна за запитом'}
-                                    </span>
-                                                {item.material && <span className="text-white text-lg font-semibold tracking-tight">грн</span>}
+                                                <span className="text-white text-lg font-semibold tracking-tight">
+                                                    {item.material ? item.material : 'Ціна за запитом'}
+                                                </span>
+                                                {item.material && (
+                                                    <span className="text-white text-lg font-semibold tracking-tight ml-1">грн</span>
+                                                )}
                                             </div>
                                         </div>
                                         <Link href="/contacts" className="inline-block px-4 py-2 border border-white/10 text-[10px] uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-300 font-bold">
