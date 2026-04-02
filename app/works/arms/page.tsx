@@ -9,15 +9,11 @@ import { projects } from '@/data/projects';
 import { ArrowLeft, Maximize2, Sparkles, Gem, PenTool } from 'lucide-react';
 
 const ArmsPage = () => {
-    // 1. Фільтруємо елементи
     const filteredItems = projects.filter(p => p.category === 'Для військових');
 
-    // 2. Сортуємо елементи за ціною (поле material)
     const sortedItems = [...filteredItems].sort((a, b) => {
-        // Функція для витягування тільки цифр з рядка
-        const getPrice = (val) => {
+        const getPrice = (val: any) => {
             if (!val) return 0;
-            // Видаляємо всі нецифрові символи (пробіли, грн тощо)
             return parseFloat(val.toString().replace(/\D/g, '')) || 0;
         };
 
@@ -68,7 +64,6 @@ const ArmsPage = () => {
             <section className="py-24 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {/* Використовуємо sortedItems замість filteredItems */}
                         {sortedItems.map((item) => (
                             <div key={item.id} className="group space-y-6">
                                 <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5">

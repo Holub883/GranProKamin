@@ -9,15 +9,15 @@ import { projects } from '@/data/projects';
 import { ArrowLeft, Maximize2, Ruler, ShieldCheck, Paintbrush } from 'lucide-react';
 
 const SingleMonumentsPage = () => {
-    // 1. Фільтруємо лише одинарні пам'ятники
     const filteredItems = projects.filter(p => p.category === 'Одинарні');
 
-    // 2. Сортуємо за ціною (від дешевших до дорожчих)
-    const sortedMonuments = [...filteredItems].sort((a, b) => {
-        const getPrice = (val) => {
+    // Сортування з виправленою типізацією
+    const sortedItems = [...filteredItems].sort((a, b) => {
+        const getPrice = (val: string | number | undefined | null): number => {
             if (!val) return 0;
             return parseFloat(val.toString().replace(/\D/g, '')) || 0;
         };
+
         return getPrice(a.material) - getPrice(b.material);
     });
 
@@ -68,7 +68,8 @@ const SingleMonumentsPage = () => {
             <section className="py-24 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {sortedMonuments.map((item) => (
+                        {/* ВИПРАВЛЕНО: Використовуємо sortedItems */}
+                        {sortedItems.map((item) => (
                             <div key={item.id} className="group space-y-6">
                                 <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5">
                                     <Image

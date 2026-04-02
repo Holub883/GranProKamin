@@ -10,7 +10,16 @@ import { ArrowLeft, Maximize2, Sparkles, Gem, PenTool } from 'lucide-react';
 
 const ExclusivePage = () => {
     const filteredItems = projects.filter(p => p.category === 'Ексклюзив');
+    const sortedItems = [...filteredItems].sort((a, b) => {
+        // Явно вказуємо тип string | any для параметра val
+        const getPrice = (val: any) => {
+            if (!val) return 0;
+            // Видаляємо всі нецифрові символи
+            return parseFloat(val.toString().replace(/\D/g, '')) || 0;
+        };
 
+        return getPrice(a.material) - getPrice(b.material);
+    });
     return (
         <main className="min-h-screen bg-[#050505] text-[#e5e5e5]">
             <Header />

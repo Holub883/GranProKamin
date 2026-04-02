@@ -13,12 +13,13 @@ const DoubleMonumentsPage = () => {
     const filteredItems = projects.filter(p => p.category === 'Подвійні');
 
     // 2. Сортуємо за ціною (від меншої до більшої)
-    const sortedDoubleMonuments = [...filteredItems].sort((a, b) => {
-        const getPrice = (val) => {
+    const sortedItems = [...filteredItems].sort((a, b) => {
+        const getPrice = (val: string | number | undefined | null): number => {
             if (!val) return 0;
-            // Видаляємо все, крім цифр, щоб коректно порівняти числа
+            // Видаляємо всі нецифрові символи для коректного порівняння чисел
             return parseFloat(val.toString().replace(/\D/g, '')) || 0;
         };
+
         return getPrice(a.material) - getPrice(b.material);
     });
 
@@ -66,8 +67,8 @@ const DoubleMonumentsPage = () => {
             <section className="py-24 px-6">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        {/* Використовуємо відсортований масив */}
-                        {sortedDoubleMonuments.map((item) => (
+                        {/* ТУТ ВИПРАВЛЕНО: Використовуємо саме sortedItems */}
+                        {sortedItems.map((item) => (
                             <div key={item.id} className="group space-y-6">
                                 <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5">
                                     <Image src={item.img} alt={item.title} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
@@ -81,7 +82,6 @@ const DoubleMonumentsPage = () => {
                                         <div className="space-y-1.5">
                                             <h3 className="text-xl font-serif italic text-white leading-tight">{item.title}</h3>
 
-                                            {/* Блок ціни з покращеною видимістю */}
                                             <div className="flex items-baseline gap-1">
                                                 <span className="text-white text-lg font-semibold tracking-tight">
                                                     {item.material ? item.material : 'Ціна за запитом'}
