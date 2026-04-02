@@ -343,7 +343,7 @@ export const projects: Project[] = [
     {
         id: 42,
         category: 'Подвійні',
-        title: '042',
+        title: '045',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/69.jpg',
         material: '120000'
@@ -351,7 +351,7 @@ export const projects: Project[] = [
     {
         id: 43,
         category: 'Одинарні',
-        title: '043',
+        title: '042',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/70.jpg',
         material: '121000'
@@ -359,7 +359,7 @@ export const projects: Project[] = [
     {
         id: 44,
         category: 'Одинарні',
-        title: '044',
+        title: '043',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/71.jpg',
         material: '118000'
@@ -367,7 +367,7 @@ export const projects: Project[] = [
     {
         id: 45,
         category: 'Одинарні',
-        title: '045',
+        title: '044',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/72.jpg',
         material: '25000'
