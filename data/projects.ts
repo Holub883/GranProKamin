@@ -26,37 +26,6 @@ export const projects: Project[] = [
     },
     {
         id: 2,
-        category: 'Ексклюзив',
-        title: '002',
-        description: 'Вишуканий дизайн з декоративними елементами та фасками.',
-        img: '/img/2.jpg',
-    },
-    {
-        id: 3,
-        category: 'Подвійні',
-        title: '003',
-        description: 'Сучасне оформлення з місцем під живі квіти та комбінацією кольорів.',
-        img: '/img/3.jpg',
-        material: '160000'
-    },
-    {
-        id: 4,
-        category: 'Подвійні',
-        title: '004',
-        description: 'Високохудожнє гравіювання ікони на чорному граніті.',
-        img: '/img/4.jpg',
-        material: '100000'
-    },
-    {
-        id: 5,
-        category: 'Подвійні',
-        title: '005',
-        description: 'Подвійна стела у формі розгорнутої книги з центральним хрестом.',
-        img: '/img/5.jpg',
-        material: '100000'
-    },
-    {
-        id: 6,
         category: 'Одинарні',
         title: '002',
         description: 'Елегантне поєднання світлого та темного каменю.',
@@ -64,22 +33,7 @@ export const projects: Project[] = [
         material: '125000'
     },
     {
-        id: 7,
-        category: 'Подвійні',
-        title: '007',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/7.jpg',
-        material: '140000'
-    },
-    {
-        id: 8,
-        category: 'Для військових',
-        title: '008',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/8.jpg',
-    },
-    {
-        id: 9,
+        id: 3,
         category: 'Одинарні',
         title: '003',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
@@ -87,15 +41,7 @@ export const projects: Project[] = [
         material: '48400'
     },
     {
-        id: 10,
-        category: 'Подвійні',
-        title: '010',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/10.jpg',
-        material: '87000'
-    },
-    {
-        id: 11,
+        id: 4,
         category: 'Одинарні',
         title: '004',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
@@ -103,7 +49,7 @@ export const projects: Project[] = [
         material: '39000'
     },
     {
-        id: 12,
+        id: 5,
         category: 'Одинарні',
         title: '005',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
@@ -111,30 +57,7 @@ export const projects: Project[] = [
         material: '79000'
     },
     {
-        id: 13,
-        category: 'Подвійні',
-        title: '013',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/13.jpg',
-        material: '137000'
-    },
-    {
-        id: 14,
-        category: 'Подвійні',
-        title: '014',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/14.jpg',
-        material: '137000'
-    },
-    {
-        id: 15,
-        category:'Для військових',
-        title: '015',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/15.jpg',
-    },
-    {
-        id: 16,
+        id: 6,
         category: 'Одинарні',
         title: '006',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
@@ -142,7 +65,7 @@ export const projects: Project[] = [
         material: '39000'
     },
     {
-        id: 17,
+        id: 7,
         category: 'Одинарні',
         title: '007',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
@@ -150,30 +73,7 @@ export const projects: Project[] = [
         material: '140000'
     },
     {
-        id: 18,
-        category: 'Для військових',
-        title: '018',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/18.jpg',
-    },
-    {
-        id: 19,
-        category: 'Подвійні',
-        title: '019',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/19.jpg',
-        material: '157000'
-    },
-    {
-        id: 20,
-        category: 'Подвійні',
-        title: '020',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/20.jpg',
-        material: '75000'
-    },
-    {
-        id: 21,
+        id: 8,
         category: 'Одинарні',
         title: '008',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
@@ -181,7 +81,7 @@ export const projects: Project[] = [
         material: '30000'
     },
     {
-        id: 22,
+        id: 9,
         category: 'Одинарні',
         title: '009',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
@@ -189,7 +89,7 @@ export const projects: Project[] = [
         material: '46400'
     },
     {
-        id: 23,
+        id: 10,
         category: 'Одинарні',
         title: '010',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
@@ -197,7 +97,7 @@ export const projects: Project[] = [
         material: '75000'
     },
     {
-        id: 24,
+        id: 11,
         category: 'Одинарні',
         title: '011',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
@@ -205,374 +105,481 @@ export const projects: Project[] = [
         material: '55000'
     },
     {
-        id: 25,
+        id: 12,
         category: 'Одинарні',
         title: '012',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/25.jpg',
         material: '34000'
-    },    {
-        id: 26,
-        category: 'Подвійні',
-        title: '026',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/26.jpg',
-        material: '99000'
-    },    {
-        id: 27,
+    },
+    {
+        id: 13,
         category: 'Одинарні',
         title: '013',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/27.jpg',
         material: '27000'
-    },    {
+    },
+       {
+        id: 14,
+        category: 'Одинарні',
+        title: '014',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/29.jpg',
+        material: '28000'
+    },
+    {
+        id: 15,
+        category: 'Одинарні',
+        title: '015',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/33.jpg',
+    },
+    {
+        id: 16,
+        category: 'Одинарні',
+        title: '016',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/35.jpg',
+        material: '13000'
+    },
+    {
+        id: 17,
+        category: 'Одинарні',
+        title: '017',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/36.jpg',
+        material: '55000'
+    },
+    {
+        id: 18,
+        category: 'Одинарні',
+        title: '018',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/18.jpg',
+        material: '43000'
+    },
+    {
+        id: 19,
+        category: 'Одинарні',
+        title: '019',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/39.jpg',
+        material: '39000'
+    },
+    {
+        id: 20,
+        category: 'Одинарні',
+        title: '020',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/40.jpg',
+        material: '49000'
+    },
+    {
+        id: 21,
+        category: 'Одинарні',
+        title: '021',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/41.jpg',
+        material: '49500'
+    },
+    {
+        id: 22,
+        category: 'Одинарні',
+        title: '022',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/42.jpg',
+        material: '98000'
+    },
+    {
+        id: 23,
+        category: 'Одинарні',
+        title: '023',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/44.jpg',
+        material: '118000'
+    },
+    {
+        id: 24,
+        category: 'Одинарні',
+        title: '024',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/46.jpg',
+        material: '49000'
+    },
+    {
+        id: 25,
+        category: 'Одинарні',
+        title: '025',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/48.jpg',
+        material: '75000'
+    },
+    {
+        id: 26,
+        category: 'Одинарні',
+        title: '026',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/49.jpg',
+        material: '61000'
+    },
+    {
+        id: 27,
+        category: 'Одинарні',
+        title: '027',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/50.jpg',
+        material: '87000'
+    },
+    {
         id: 28,
-        category: 'Подвійні',
+        category: 'Одинарні',
         title: '028',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/28.jpg',
-        material: '250000'
-    },    {
+        material: '7000'
+    },
+    {
         id: 29,
         category: 'Одинарні',
         title: '029',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/29.jpg',
-        material: '28000'
-    },    {
+        img: '/img/52.jpg',
+        material: '51000'
+    },
+    {
         id: 30,
-        category: 'Ексклюзив',
+        category: 'Одинарні',
         title: '030',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/30.jpg',
+        img: '/img/53.jpg',
+        material: '68000'
     },
     {
         id: 31,
-        category: 'Для військових',
+        category: 'Одинарні',
         title: '031',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/31.jpg',
+        img: '/img/54.jpg',
+        material: '180000'
     },
     {
         id: 32,
-        category: 'Ексклюзив',
+        category: 'Одинарні',
         title: '032',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/32.jpg',
-        material: '90000'
+        img: '/img/55.jpg',
+        material: '110000'
     },
     {
         id: 33,
         category: 'Одинарні',
         title: '033',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/33.jpg',
+        img: '/img/56.jpg',
+        material: '46000'
     },
     {
         id: 34,
-        category: 'Для військових',
+        category: 'Одинарні',
         title: '034',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/34.jpg',
+        img: '/img/57.jpg',
+        material: '52000'
     },
     {
         id: 35,
         category: 'Одинарні',
         title: '035',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/35.jpg',
-        material: '13000'
+        img: '/img/58.jpg',
+        material: '54000'
     },
     {
         id: 36,
         category: 'Одинарні',
         title: '036',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/36.jpg',
-        material: '55000'
+        img: '/img/60.jpg',
+        material: '70000'
     },
     {
         id: 37,
-        category: 'Для військових',
+        category: 'Одинарні',
         title: '037',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/37.jpg',
-    },
-    {
+        img: '/img/61.jpg',
+        material: '59000'
+    },    {
         id: 38,
         category: 'Одинарні',
         title: '038',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/38.jpg',
-        material: '43000'
-    },
-    {
+        img: '/img/62.jpg',
+        material: '45000'
+    },    {
         id: 39,
         category: 'Одинарні',
         title: '039',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/39.jpg',
-        material: '39000'
-    },
-    {
+        img: '/img/63.jpg',
+        material: '85000'
+    },        {
         id: 40,
         category: 'Одинарні',
         title: '040',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/40.jpg',
-        material: '49000'
-    },
-    {
+        img: '/img/67.jpg',
+        material: '57000'
+    },    {
         id: 41,
         category: 'Одинарні',
         title: '041',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/41.jpg',
-        material: '49500'
+        img: '/img/68.jpg',
+        material: '70000'
     },
     {
         id: 42,
         category: 'Одинарні',
         title: '042',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/42.jpg',
-        material: '98000'
+        img: '/img/69.jpg',
+        material: '140000'
     },
     {
         id: 43,
-        category: 'Подвійні',
+        category: 'Одинарні',
         title: '043',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/43.jpg',
-        material: '90000'
+        img: '/img/70.jpg',
+        material: '121000'
     },
     {
         id: 44,
         category: 'Одинарні',
         title: '044',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/44.jpg',
-        material: '118000'
+        img: '/img/71.jpg',
+        material: '25000'
     },
     {
         id: 45,
-        category: 'Для військових',
+        category: 'Одинарні',
         title: '045',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/45.jpg',
+        img: '/img/72.jpg',
+        material: '60000'
     },
     {
         id: 46,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '046',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/46.jpg',
-        material: '49000'
+        description: 'Сучасне оформлення з місцем під живі квіти та комбінацією кольорів.',
+        img: '/img/3.jpg',
+        material: '160000'
     },
     {
         id: 47,
-        category: 'Для військових',
+        category: 'Подвійні',
         title: '047',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/47.jpg',
+        description: 'Високохудожнє гравіювання ікони на чорному граніті.',
+        img: '/img/4.jpg',
+        material: '100000'
     },
     {
         id: 48,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '048',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/48.jpg',
-        material: '75000'
+        description: 'Подвійна стела у формі розгорнутої книги з центральним хрестом.',
+        img: '/img/5.jpg',
+        material: '100000'
     },
     {
         id: 49,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '049',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/49.jpg',
-        material: '61000'
-    },
-    {
-        id: 50,
-        category: 'Одинарні',
-        title: '050',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/50.jpg',
+        img: '/img/10.jpg',
         material: '87000'
     },
     {
+        id: 50,
+        category: 'Подвійні',
+        title: '050',
+        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
+        img: '/img/13.jpg',
+        material: '137000'
+    },
+    {
         id: 51,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '051',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/51.jpg',
-        material: '7000'
+        img: '/img/14.jpg',
+        material: '137000'
     },
     {
         id: 52,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '052',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/52.jpg',
-        material: '51000'
+        img: '/img/19.jpg',
+        material: '157000'
     },
     {
         id: 53,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '053',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/53.jpg',
-        material: '68000'
+        img: '/img/20.jpg',
+        material: '75000'
     },
     {
         id: 54,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '054',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/54.jpg',
-        material: '180000'
+        img: '/img/26.jpg',
+        material: '99000'
     },
     {
         id: 55,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '055',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/55.jpg',
-        material: '110000'
+        img: '/img/28.jpg',
+        material: '250000'
     },
     {
         id: 56,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '056',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/56.jpg',
-        material: '46000'
+        img: '/img/43.jpg',
+        material: '90000'
     },
     {
         id: 57,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '057',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/57.jpg',
-        material: '52000'
+        img: '/img/7.jpg',
+        material: '140000'
     },
     {
         id: 58,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '058',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/58.jpg',
-        material: '54000'
+        img: '/img/59.jpg',
+        material: '76000'
     },
     {
         id: 59,
         category: 'Подвійні',
         title: '059',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/59.jpg',
-        material: '76000'
+        img: '/img/64.jpg',
+        material: '65000'
     },
     {
         id: 60,
-        category: 'Одинарні',
+        category: 'Подвійні',
         title: '060',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/60.jpg',
-        material: '70000'
+        img: '/img/73.jpg',
+        material: '600000'
     },
     {
         id: 61,
-        category: 'Одинарні',
+        category: 'Ексклюзив',
         title: '061',
-        description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/61.jpg',
-        material: '59000'
-    },    {
+        description: 'Вишуканий дизайн з декоративними елементами та фасками.',
+        img: '/img/2.jpg',
+    },
+    {
         id: 62,
-        category: 'Одинарні',
+        category: 'Ексклюзив',
         title: '062',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/62.jpg',
-        material: '45000'
-    },    {
+        img: '/img/30.jpg',
+    },
+    {
         id: 63,
-        category: 'Одинарні',
+        category: 'Ексклюзив',
         title: '063',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/63.jpg',
-        material: '85000'
-    },    {
+        img: '/img/32.jpg',
+        material: '90000'
+    },
+    {
         id: 64,
-        category: 'Подвійні',
+        category: 'Для військових',
         title: '064',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/64.jpg',
-        material: '65000'
-    },    {
+        img: '/img/34.jpg',
+    },
+    {
         id: 65,
         category: 'Для військових',
         title: '065',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/65.jpg',
-    },    {
+        img: '/img/37.jpg',
+    },
+    {
         id: 66,
         category: 'Для військових',
         title: '066',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/66.jpg',
-    },    {
+        img: '/img/45.jpg',
+    },
+    {
         id: 67,
-        category: 'Одинарні',
+        category: 'Для військових',
         title: '067',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/67.jpg',
-        material: '57000'
-    },    {
+        img: '/img/8.jpg',
+    },
+    {
         id: 68,
-        category: 'Одинарні',
+        category: 'Для військових',
         title: '068',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/68.jpg',
-        material: '70000'
+        img: '/img/47.jpg',
     },
     {
         id: 69,
-        category: 'Одинарні',
+        category: 'Для військових',
         title: '069',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/69.jpg',
-        material: '140000'
-    },
-    {
+        img: '/img/65.jpg',
+    },    {
         id: 70,
-        category: 'Одинарні',
+        category: 'Для військових',
         title: '070',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/70.jpg',
-        material: '121000'
+        img: '/img/66.jpg',
     },
     {
         id: 71,
-        category: 'Одинарні',
+        category:'Для військових',
         title: '071',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/71.jpg',
-        material: '25000'
+        img: '/img/15.jpg',
     },
     {
         id: 72,
-        category: 'Одинарні',
+        category: 'Для військових',
         title: '072',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/72.jpg',
-        material: '60000'
+        img: '/img/18.jpg',
     },
     {
         id: 73,
-        category: 'Подвійні',
+        category: 'Для військових',
         title: '073',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
-        img: '/img/73.jpg',
-        material: '600000'
+        img: '/img/31.jpg',
     },
 ];
