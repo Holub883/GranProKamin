@@ -76,10 +76,19 @@ const SingleMonumentsPage = () => {
                                     </div>
                                 </div>
 
-                                <div className="space-y-2">
-                                    <h3 className="text-xl font-serif italic text-white">{item.title}</h3>
-                                    <div className="pt-4 flex items-center justify-between border-t border-white/5">
-                                        <Link href="/contacts" className="text-[9px] uppercase tracking-widest text-white hover:text-[#b8860b] transition-colors">
+                                <div className="space-y-3">
+                                    <div className="pt-4 flex items-start justify-between border-t border-white/5">
+                                        <div className="space-y-1.5">
+                                            <h3 className="text-xl font-serif italic text-white leading-tight">{item.title}</h3>
+                                            {/* Оновлений блок ціни */}
+                                            <div className="flex items-baseline gap-1">
+                                    <span className="text-white text-lg font-semibold tracking-tight">
+                                        {item.material ? item.material : 'Ціна за запитом'}
+                                    </span>
+                                                {item.material && <span className="text-white text-lg font-semibold tracking-tight">грн</span>}
+                                            </div>
+                                        </div>
+                                        <Link href="/contacts" className="inline-block px-4 py-2 border border-white/10 text-[10px] uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-300 font-bold">
                                             Замовити
                                         </Link>
                                     </div>
