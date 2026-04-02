@@ -158,7 +158,6 @@ export const projects: Project[] = [
         title: '018',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/18.jpg',
-        material: 'Габро'
     },
     {
         id: 19,
