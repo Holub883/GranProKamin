@@ -110,7 +110,7 @@ const ExclusivePage = () => {
                         {sortedItems.map((item) => (
                             <div key={item.id} className="group space-y-6">
                                 <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5">
-                                    <Image src={item.img} alt="Еклюзивні пам'ятники у Коротишеві" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                                    <Image src={item.img} alt="Еклюзивні пам'ятники у Коростишеві" fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                                     <div className="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors" />
                                     <div className="absolute bottom-6 right-6 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity border border-white/20">
                                         <Maximize2 size={20} className="text-white" />

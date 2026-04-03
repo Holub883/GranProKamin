@@ -112,7 +112,7 @@ const ArmsPage = () => {
                                 <div className="relative aspect-[3/4] overflow-hidden bg-zinc-900 border border-white/5">
                                     <Image
                                         src={item.img}
-                                        alt="Військові пам'ятники у Коротишеві"
+                                        alt="Військові пам'ятники у Коростишеві"
                                         fill
                                         className="object-cover transition-transform duration-700 group-hover:scale-110"
                                     />
