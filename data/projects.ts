@@ -22,7 +22,7 @@ export const projects: Project[] = [
         title: '001',
         description: 'Класичний одинарний пам’ятник з об’ємним хрестом та квітником.',
         img: '/img/1.jpg',
-        material: '43000'
+        material: '47000'
     },
     {
         id: 2,
@@ -46,7 +46,7 @@ export const projects: Project[] = [
         title: '004',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/11.jpg',
-        material: '39000'
+        material: '42000'
     },
     {
         id: 5,
@@ -54,7 +54,7 @@ export const projects: Project[] = [
         title: '005',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/12.jpg',
-        material: '79000'
+        material: '86000'
     },
     {
         id: 6,
@@ -78,7 +78,7 @@ export const projects: Project[] = [
         title: '008',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/21.jpg',
-        material: '30000'
+        material: '36000'
     },
     {
         id: 9,
@@ -86,7 +86,7 @@ export const projects: Project[] = [
         title: '009',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/22.jpg',
-        material: '52000'
+        material: '54000'
     },
     {
         id: 10,
@@ -94,7 +94,7 @@ export const projects: Project[] = [
         title: '010',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/23.jpg',
-        material: '75000'
+        material: '84000'
     },
     {
         id: 11,
@@ -110,7 +110,7 @@ export const projects: Project[] = [
         title: '012',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/25.jpg',
-        material: '34000'
+        material: '39000'
     },
     {
         id: 13,
@@ -150,7 +150,7 @@ export const projects: Project[] = [
         title: '017',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/36.jpg',
-        material: '55000'
+        material: '61000'
     },
     {
         id: 18,
@@ -174,7 +174,7 @@ export const projects: Project[] = [
         title: '020',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/40.jpg',
-        material: '59000'
+        material: '63000'
     },
     {
         id: 21,
@@ -190,7 +190,7 @@ export const projects: Project[] = [
         title: '022',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/42.jpg',
-        material: '98000'
+        material: '117000'
     },
     {
         id: 23,
@@ -198,7 +198,7 @@ export const projects: Project[] = [
         title: '023',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/44.jpg',
-        material: '118000'
+        material: '130000'
     },
     {
         id: 24,
@@ -278,7 +278,7 @@ export const projects: Project[] = [
         title: '033',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/56.jpg',
-        material: '46000'
+        material: '52000'
     },
     {
         id: 34,
@@ -317,14 +317,14 @@ export const projects: Project[] = [
         title: '038',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/62.jpg',
-        material: '45000'
+        material: '54000'
     },    {
         id: 39,
         category: 'Одинарні',
         title: '039',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/63.jpg',
-        material: '85000'
+        material: '105000'
     },        {
         id: 40,
         category: 'Одинарні',
@@ -338,7 +338,7 @@ export const projects: Project[] = [
         title: '041',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/68.jpg',
-        material: '70000'
+        material: '84000'
     },
     {
         id: 42,
@@ -349,12 +349,12 @@ export const projects: Project[] = [
         material: '121000'
     },
     {
-        id: 44,
+        id: 43,
         category: 'Одинарні',
         title: '043',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/71.jpg',
-        material: '118000'
+        material: '30000'
     },
     {
         id: 44,
@@ -366,11 +366,11 @@ export const projects: Project[] = [
     },
     {
         id: 45,
-        category: 'Подвійні',
+        category: 'Одинарні',
         title: '045',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/69.jpg',
-        material: '120000'
+        material: '145000'
     },
     {
         id: 46,
@@ -402,7 +402,7 @@ export const projects: Project[] = [
         title: '049',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/10.jpg',
-        material: '87000'
+        material: '94000'
     },
     {
         id: 50,
@@ -434,7 +434,7 @@ export const projects: Project[] = [
         title: '053',
         description: 'Строгий та лаконічний дизайн з акцентом на портрет.',
         img: '/img/20.jpg',
-        material: '75000'
+        material: '78000'
     },
     {
         id: 54,
