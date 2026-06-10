@@ -16,7 +16,7 @@ export default function Page() {
         "name": "Ексклюзивні пам'ятники — Гран ПроКамінь",
         "description": "Галерея унікальних авторських пам'ятників з натурального граніту, виготовлених майстрами нашої майстерні у Коростишеві.",
         "url": "https://gran-pro-kamin.com.ua/works/odynarni",
-        "numberOfItems": "3",
+        "numberOfItems": "38",
         "itemListElement": [
             {
                 "@type": "ListItem",
