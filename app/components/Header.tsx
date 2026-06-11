@@ -2,12 +2,21 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation'; // Додали хук для визначення активного лінка
 import { Send, Instagram, MessageSquare, Menu, X, Mail, Clock } from 'lucide-react';
-import Navbar from "./Nav";
 import './style/Header.css';
+
+const navLinks = [
+    { name: 'Головна', href: '/' },
+    { name: 'Наші роботи', href: '/works' },
+    { name: 'Про нас', href: '/about' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Контакти', href: '/contacts' },
+];
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname(); // Отримуємо поточний шлях сторінки
 
     return (
         <header className="site-header">
@@ -18,13 +27,29 @@ const Header = () => {
                     <button
                         className="mobile-menu-btn"
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        aria-label="Toggle menu"
                     >
                         {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
                     </button>
 
                     {/* Навігація для десктопа */}
                     <div className="desktop-nav">
-                        <Navbar />
+                        <nav className="main-nav">
+                            {navLinks.map((link) => {
+                                // Перевіряємо, чи поточний шлях збігається з href посилання
+                                const isActive = pathname === link.href;
+
+                                return (
+                                    <Link
+                                        key={link.href}
+                                        href={link.href}
+                                        className={`nav-item ${isActive ? 'active' : ''}`}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                );
+                            })}
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -65,7 +90,9 @@ const Header = () => {
                     </div>
 
                     <div className="social-links">
-                        <a href="https://www.instagram.com/_granit_koros?igsh=MXJpdTd5eWZseGtjcQ==" className="social-icon"><Instagram size={18} /></a>
+                        <a href="https://www.instagram.com/_granit_koros?igsh=MXJpdTd5eWZseGtjcQ==" className="social-icon" target="_blank" rel="noopener noreferrer">
+                            <Instagram size={18} />
+                        </a>
                         <a href="https://viber://chat?number=%2B380986747919" className="social-icon">
                             <MessageSquare size={18} />
                         </a>
@@ -73,13 +100,29 @@ const Header = () => {
                 </div>
             </div>
 
-            {/* 3. МОБІЛЬНЕ МЕНЮ (Показується при кліку) */}
+            {/* 3. МОБІЛЬНЕ МЕНЮ */}
             <div className={`mobile-drop-menu ${isMenuOpen ? 'show' : ''}`}>
                 <div className="mobile-menu-inner">
-                    <Navbar />
+                    {/* Замінили неіснуючий <Navbar /> на правильну мобільну навігацію */}
+                    <nav className="mobile-nav">
+                        {navLinks.map((link) => {
+                            const isActive = pathname === link.href;
+                            return (
+                                <Link
+                                    key={link.href}
+                                    href={link.href}
+                                    className={`mobile-nav-item ${isActive ? 'active' : ''}`}
+                                    onClick={() => setIsMenuOpen(false)} // Закриваємо меню при кліку на лінк
+                                >
+                                    {link.name}
+                                </Link>
+                            );
+                        })}
+                    </nav>
+
                     <div className="mobile-menu-footer">
                         <a href="tel:+380986747919" className="m-phone">+38 (098) 67-47-919</a>
-                        <p className="m-mail">stepanikolaevitch@gmail.com</p>
+                        <p className="m-mail">granprokamin@gmail.com</p> {/* Синхронізував пошту з десктопною */}
                     </div>
                 </div>
             </div>
