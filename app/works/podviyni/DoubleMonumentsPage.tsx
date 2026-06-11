@@ -129,6 +129,7 @@ const DoubleMonumentsPage = () => {
                                                     <span className="text-white text-lg font-semibold tracking-tight ml-1">грн</span>
                                                 )}
                                             </div>
+                                            <span className="text-[10px] uppercase tracking-widest font-medium">Ціна без врахування встановлення</span>
                                         </div>
                                         <Link href="/contacts" className="inline-block px-4 py-2 border border-white/10 text-[10px] uppercase tracking-widest text-white hover:bg-white hover:text-black transition-all duration-300 font-bold">
                                             Замовити
